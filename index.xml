@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on The Commonplace Book</title>
+    <link>http://example.org/</link>
+    <description>Recent content in Home on The Commonplace Book</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>With ToC</title>
+      <link>http://example.org/docs/5-archives/example/table-of-contents/with-toc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/example/table-of-contents/with-toc/</guid>
+      <description>Caput vino delphine in tamen vias Cognita laeva illo fracta Lorem markdownum pavent auras, surgit nunc cingentibus libet Laomedonque que est. Pastor An arbor filia foedat, ne fugit aliter, per. Helicona illas et callida neptem est Oresitrophos caput, dentibus est venit. Tenet reddite famuli praesentem fortibus, quaeque vis foret si frondes gelidos gravidae circumtulit inpulit armenta nativum.
+ Te at cruciabere vides rubentis manebo Maturuit in praetemptat ruborem ignara postquam habitasse Subitarum supplevit quoque fontesque venabula spretis modo Montis tot est mali quasque gravis Quinquennem domus arsit ipse Pellem turis pugnabant locavit  Natus quaerere Pectora et sine mulcere, coniuge dum tincta incurvae.</description>
+    </item>
+    
+    <item>
+      <title>Without ToC</title>
+      <link>http://example.org/docs/5-archives/example/table-of-contents/without-toc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/example/table-of-contents/without-toc/</guid>
+      <description>At me ipso nepotibus nunc celebratior genus Tanto oblite Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
+Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>http://example.org/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&#39;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&#39;t cover using CSS to style your theme.
+We&#39;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Migrate to Hugo from Jekyll</title>
+      <link>http://example.org/posts/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/▾ images/logo.png should become
+▾ &amp;lt;root&amp;gt;/▾ static/▾ images/logo.png Additionally, you&#39;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Working with Pelican: Assorted Notes</title>
+      <link>http://example.org/docs/3-areas/programming/working_with_pelican/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/3-areas/programming/working_with_pelican/</guid>
+      <description>Working with Pelican: Assorted Notes Using Pandoc to Convert Formats Note that the -s specifies to create a standalone document. The general structure:
+pandoc inputfile.ext -f fromtype -t totype -s -o outputfile.extWhen converting from Markdown (specifically Kramdown, when I was editing files using VS Code before the switch to Emacs) to reStructuredText, I was getting some weird character rendering. Is there a neat Unicode-related argument that I can pass to Pandoc to sort this out?</description>
+    </item>
+    
+    <item>
+      <title>A Minimal Webpage with Pelican</title>
+      <link>http://example.org/docs/3-areas/programming/creating_this_webpage/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/3-areas/programming/creating_this_webpage/</guid>
+      <description>A Minimal Webpage with Pelican Getting Started I already had Anaconda Python installed, so the first thing to do was to create a conda environment, which I called pelicansite,:
+conda create --name pelicansiteand then activate it: :
+conda activate pelicansiteThis is all done from the Anaconda Prompt so that the correct environment variables are set. Now I can install the pelican package (I don&#39;t need the optional argument for using markdown).</description>
+    </item>
+    
+    <item>
+      <title>Neural Networks for Hedging: Part 2</title>
+      <link>http://example.org/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</link>
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</guid>
+      <description>Table of Contents  Introduction A Recurrent Neural Network Learning The Two-step Hedge Next Steps  Introduction  This is Part 2, Part 1 can be found here. All the code for both parts is available on Github. Our goal is to implement the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;, using PyTorch.
+In Part 1, we built a very simple neural net with two hidden layers.</description>
+    </item>
+    
+    <item>
+      <title>Neural Networks for Hedging: Part 1</title>
+      <link>http://example.org/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</link>
+      <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</guid>
+      <description>Table of Contents  Introduction A First Network Learning The Black-Scholes Delta Learning A One-step Hedge Next Steps Resources  Introduction  The purpose of this page is track my progress implementing the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;. In that paper they use a semi-recurrent deep neural network to calculate the appropriate hedging positions when hedging vanilla options.
+They begin in a simulation setting using the Heston model and their network is implemented using TensorFlow.</description>
+    </item>
+    
+    <item>
+      <title>Becoming a Quantitative Developer (Deprecated)</title>
+      <link>http://example.org/docs/3-areas/programming/2019-04-25-becoming-a-quantitative-developer/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/3-areas/programming/2019-04-25-becoming-a-quantitative-developer/</guid>
+      <description>Table of Contents  Introduction Getting Started Resources  Programming Languages Editor Version Control Software Development    Introduction  This page serves as a learning guide for the important skills of a quantitative developer. It is primarily inspired by the QuantStart Self-Study Plan for Becoming a Quantitative Developer. The skills are divided in four rough and overlapping categories:
+ Programming: The ability to solve a problem in a specific programming language.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>http://example.org/posts/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/goisforlovers/</guid>
+      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
+This document is a brief primer on using Go templates.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>http://example.org/posts/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at Install Hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/example/2nd/3rd/4th/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/example/2nd/3rd/4th/</guid>
+      <description>4th Level of Menu Caesorum illa tu sentit micat vestes papyriferi Inde aderam facti; Theseus vis de tauri illa peream. Oculos uberaque non regisque vobis cursuque, opus venit quam vulnera. Et maiora necemque, lege modo; gestanda nitidi, vero? Dum ne pectoraque testantur.
+Venasque repulsa Samos qui, exspectatum eram animosque hinc, aut manes, Assyrii. Cupiens auctoribus pariter rubet, profana magni super nocens. Vos ius sibilat inpar turba visae iusto! Sedes ante dum superest extrema.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/example/hidden/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/example/hidden/</guid>
+      <description>This page is hidden in menu Quondam non pater est dignior ille Eurotas Latent te facies Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
+ Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor  Cum honorum Latona O fallor in sustinui iussorum equidem.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/shortcodes/buttons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/shortcodes/buttons/</guid>
+      <description>Buttons Buttons are styled links that can lead to local page or external link.
+{{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}}{{&amp;lt; button href=&amp;#34;https://github.com/alex-shpak/hugo-book&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}Example Get HomeContribute</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/shortcodes/columns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/shortcodes/columns/</guid>
+      <description>Columns Columns help organize shorter pieces of content horizontally for readability.
+{{&amp;lt; columns &amp;gt;}} &amp;lt;!--begin columns block --&amp;gt;# Left ContentLorem markdownum insigne...&amp;lt;---&amp;gt; &amp;lt;!--magic sparator, between columns --&amp;gt;# Mid ContentLorem markdownum insigne...&amp;lt;---&amp;gt; &amp;lt;!--magic sparator, between columns --&amp;gt;# Right ContentLorem markdownum insigne...{{&amp;lt; /columns &amp;gt;}}Example Left Content Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa protulit, sed sed aere valvis inhaesuro Pallas animam: qui quid, ignes.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/shortcodes/expand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/shortcodes/expand/</guid>
+      <description>Expand Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
+Example Default {{&amp;lt; expand &amp;gt;}}## Markdown contentLorem markdownum insigne...{{&amp;lt; /expand &amp;gt;}}Expand↕Markdown content Lorem markdownum insigne&amp;hellip;With Custom Label {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}}## Markdown contentLorem markdownum insigne...{{&amp;lt; /expand &amp;gt;}}Custom Label...Markdown content Lorem markdownum insigne.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/shortcodes/hints/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/shortcodes/hints/</guid>
+      <description>Hints Hint shortcode can be used as hint/alerts/notification block.
+There are 3 colors to choose: info, warning and danger.
+{{&amp;lt; hint [info|warning|danger] &amp;gt;}}**Markdown content** Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develatstringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa{{&amp;lt; /hint &amp;gt;}}Example Markdown content
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus TelethusaMarkdown content</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/shortcodes/katex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/shortcodes/katex/</guid>
+      <description>KaTeX KaTeX shortcode let you render math typesetting in markdown document. See KaTeX
+Example {{&amp;lt; katex [class=&amp;#34;text-center&amp;#34;] &amp;gt;}}x = \begin{cases}a &amp;amp;\text{if } b \\c &amp;amp;\text{if } d\end{cases}{{&amp;lt; /katex &amp;gt;}}x = \begin{cases} a &amp;amp;\text{if } b \
+c &amp;amp;\text{if } d \end{cases}
+Does inline math work with $$x=17$$ mmark?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/shortcodes/mermaid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/shortcodes/mermaid/</guid>
+      <description>Mermaid Chart Mermaid is library for generating svg charts and diagrams from text.
+Example {{&amp;lt; mermaid [class=&amp;#34;text-center&amp;#34;]&amp;gt;}}sequenceDiagramAlice-&amp;gt;&amp;gt;Bob: Hello Bob, how are you?alt is sickBob-&amp;gt;&amp;gt;Alice: Not so good :(else is wellBob-&amp;gt;&amp;gt;Alice: Feeling fresh like a daisyendopt Extra responseBob-&amp;gt;&amp;gt;Alice: Thanks for askingend{{&amp;lt; /mermaid &amp;gt;}}</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/5-archives/shortcodes/tabs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/5-archives/shortcodes/tabs/</guid>
+      <description>Tabs Tabs let you organize content by context, for example installation instructions for each supported platform.
+{{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}}{{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; /tabs &amp;gt;}}Example MacOSMacOS This is tab MacOS content.
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description>
+    </item>
+    
+  </channel>
+</rss>

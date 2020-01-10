@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Becoming a Quantitative Developer (Deprecated)"><meta property="og:title" content="Becoming a Quantitative Developer (Deprecated)" />
+<meta property="og:description" content="Table of Contents  Introduction Getting Started Resources  Programming Languages Editor Version Control Software Development    Introduction  This page serves as a learning guide for the important skills of a quantitative developer. It is primarily inspired by the QuantStart Self-Study Plan for Becoming a Quantitative Developer. The skills are divided in four rough and overlapping categories:
+ Programming: The ability to solve a problem in a specific programming language." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/3-areas/programming/2019-04-25-becoming-a-quantitative-developer/" />
+<meta property="article:published_time" content="2019-04-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-25T00:00:00+00:00" />
+<title>Becoming a Quantitative Developer (Deprecated) | The Commonplace Book</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.e3ca513519c1bf3d15c9b2dbc36617f10bb187b6dbb9c5ceb8e24cae1a1e8017.css" integrity="sha256-48pRNRnBvz0VybLbw2YX8Quxh7bbucXOuOJMrhoegBc=">
+
+
+<script defer src="/en.search.min.3482f4c1c3d96a4f6197ae9113a9a4691bbf88f9b8d809278d6dd65014c3f739.js" integrity="sha256-NIL0wcPZak9hl66RE6mkaRu/iPm42AknjW3WUBTD9zk="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="http://example.org/"><span>The Commonplace Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/2-projects/" >
+      Projects
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/docs/2-projects/deep-hedging/" >
+      Deep Hedging
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/" >
+      Neural Networks for Hedging: Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/" >
+      Neural Networks for Hedging: Part 1
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/3-areas/" >
+      Areas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/docs/3-areas/programming/" >
+      Programming
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/docs/3-areas/programming/working_with_pelican/" >
+      Working with Pelican: Assorted Notes
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/3-areas/programming/creating_this_webpage/" >
+      A Minimal Webpage with Pelican
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/3-areas/programming/2019-04-25-becoming-a-quantitative-developer/"  class="active">
+      Becoming a Quantitative Developer (Deprecated)
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/4-resources/" >
+      Resources
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/5-archives/" >
+      Archives
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+  <strong>Becoming a Quantitative Developer (Deprecated)</strong>
+</header>
+
+      
+<article class="markdown"><h1 id="table-of-contents">Table of Contents</h1>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#gettingStarted">Getting Started</a></li>
+<li><a href="#resources">Resources</a>
+<ol>
+<li><a href="#programmingLanguages">Programming Languages</a></li>
+<li><a href="#editor">Editor</a></li>
+<li><a href="#versionControl">Version Control</a></li>
+<li><a href="#softwareDevelopment">Software Development</a></li>
+</ol>
+</li>
+</ol>
+<h1 id="introduction-a-nameintroductiona">Introduction <!-- raw HTML omitted --><!-- raw HTML omitted --></h1>
+<p>This page serves as a learning guide for the important skills of a quantitative developer. It is primarily inspired by the QuantStart <a href="https://www.quantstart.com/articles/Self-Study-Plan-for-Becoming-a-Quantitative-Developer">Self-Study Plan for Becoming a Quantitative Developer</a>. The skills are divided in four rough and overlapping categories:</p>
+<ol>
+<li><strong>Programming</strong>: The ability to solve a problem in a specific programming language.</li>
+<li><strong>Editor / IDE</strong>: The ability to get the most out of your editor or IDE, which makes a large difference to productivity.</li>
+<li><strong>Version Control</strong>: Good version control practices. No more &ldquo;Save As&rdquo;.</li>
+<li><strong>Software Development</strong>: Knowledge of how to engineer good, maintainable software as well as how to manage software-based projects.</li>
+</ol>
+<p>The intention is to build a solid foundation in each of these areas and then specialize as needed. Our goals are three-fold:</p>
+<ol>
+<li><strong>Become productive as quickly as possible.</strong> This is to justify the investment both to ourselves and our employers as necessary.</li>
+<li><strong>To learn together.</strong> The learning process works best with other people. We are all going to use the same tools and commit to the same deadlines so that we can discuss the problems that arise and help each other out.</li>
+<li><strong>Develop skills that are relevant to our further career development.</strong> As much as possible, we want to learn skills that are <em>future proof</em> and not only specific to our current role and environment.</li>
+</ol>
+<p>In light of these goals, I cautiously make the following recommendations: For programming languages, we will learn <a href="https://www.python.org/">Python</a> and C++. As an editor, we will use <a href="https://code.visualstudio.com/">Visual Studio Code</a>. In terms of version control, we will learn the ubiquitous <a href="https://git-scm.com/">Git</a> and host our personal learning projects on <a href="https://github.com/">GitHub</a>. I don't know much about software development at this stage, so we'll stick to the recommendations made in the self-study guide above.</p>
+<h1 id="getting-started-a-namegettingstarteda">Getting Started <!-- raw HTML omitted --><!-- raw HTML omitted --></h1>
+<p>This guide assumes that you're using Windows. You'll need to install the following software:</p>
+<ul>
+<li><a href="https://visualstudio.microsoft.com/downloads/">Visual Studio Community Edition</a>  (For C++ development only, and you'll need admin rights)</li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+<li><a href="https://git-scm.com/download/win">Git for Windows</a>
+<ul>
+<li>The default options should all be fine.</li>
+</ul>
+</li>
+<li><a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda for Python 3.x</a> (We'll use this to manage our Python environments)</li>
+</ul>
+<p>Once all the necessary software is installed, we'll need to set up some things.
+The first thing to do is go create a personal <a href="https://github.com/">GitHub</a> account so that you can start practicing your version control as we work through the exercises. Then we can start setting up our development environments.</p>
+<h2 id="getting-started-with-visual-studio-code-and-python">Getting Started with Visual Studio Code and Python</h2>
+<p>To get started, we will work through the official <a href="https://code.visualstudio.com/docs/python/python-tutorial">Getting Started with Python in VS Code</a> tutorial, but first note the following:</p>
+<ul>
+<li>VS Code extensions can be installed by clicking on the <code>Extensions</code> button on the left-hand side of the VS Code window and then searching for the appropriate extension and clicking <code>install</code>.</li>
+<li>I recommend you create a single folder for all your python code, with your projects as subfolders. For example, <code>C:\dev\python\hello</code> for the &lsquo;&lsquo;hello&rsquo;&rsquo; project in the tutorial.</li>
+<li>When the official tutorial says &lsquo;&lsquo;At the command prompt or terminal&rsquo;', we will use our Anaconda prompt, which was installed along with Miniconda. I recommend you pin the Anaconda prompt to your start menu, or add it as a desktop icon.</li>
+<li>When the tutorial discusses selecting the Python interpreter, you should select the one containing <code>('base':conda)</code>. This is because we are using Conda as our Python package and environment manager.</li>
+<li>On your first try, consider skipping the section on <a href="https://code.visualstudio.com/docs/python/python-tutorial#_configure-and-run-the-debugger">debugging</a>, and rather move on to the example below. Although configuring the debugger is very useful, and we will use it later, it can be intimidating.</li>
+<li>DON'T follow the instructions in the <a href="https://code.visualstudio.com/docs/python/python-tutorial#_install-and-use-packages">Install and use packages</a> section of the tutorial! We won't be mixing virtual environments with our Conda environments. See below instead.</li>
+</ul>
+<h3 id="packages-and-environments-with-conda">Packages and Environments with Conda</h3>
+<p>Following on from the tutorial, create a new file called <code>standardplot.py</code> and copy and paste the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+
+x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">100</span>)  <span style="color:#75715e"># Create a list of evenly-spaced numbers over the range</span>
+plt<span style="color:#f92672">.</span>plot(x, np<span style="color:#f92672">.</span>sin(x))       <span style="color:#75715e"># Plot the sine of each x point</span>
+plt<span style="color:#f92672">.</span>show()                   <span style="color:#75715e"># Display the plot</span>
+</code></pre></div><p>This code won't run, because the <code>matplotlib</code> <em>package</em> is not installed in the current <em>environment</em>, known as <code>base</code>. So we're going to create a new environment for our program, activate it (switch context to it) and then install <code>matplotlib</code>. Then we can select the new environment as our Python interpreter and run the above code.</p>
+<p>In the Anaconda prompt (the one you used to start VS Code, NOT the integrated terminal inside VS Code), create a new environment called <code>tutorial</code> using the Conda command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda create --name tutorial
+</code></pre></div><p>(If you get a <code>bad handshake</code> error, check out <a href="https://github.com/conda/conda/issues/4930">this link</a>.)
+Then switch to the environment, by activating it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">activate tutorial
+</code></pre></div><p>Now we'll use Conda as a package manager to install the <code>matplotlib</code> package in our new <code>tutorial</code> environment (along with all its dependencies):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda install matplotlib
+</code></pre></div><p>Once this is completed, restart VS Code. Use the command palette to select a Python interpreter (as we did in the start of the tutorial), but now select the interpreter associated with your new environment, <code>tutorial</code>. You'll now be able to run the new file and use the <code>matplotlib</code> package.</p>
+<p>For a handy reference to the Conda commands, see the official <a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf">cheat sheet</a>. To learn more about using Conda as the Python environment and package manager in VS Code, see <a href="https://code.visualstudio.com/docs/python/environments#_global-virtual-and-conda-environments">Using Python environments in VS Code</a>.</p>
+<h1 id="resources-a-nameresourcesa">Resources <!-- raw HTML omitted --><!-- raw HTML omitted --></h1>
+<p>The idea is to use reference material that comes recommended by experienced developers (thanks Reddit and StackOverflow) and is established enough that a consensus has been reached on the quality. We want to be idiomatic from the start: let's learn the language <em>as if</em> we didn't know any other.</p>
+<h2 id="programming-languages-a-nameprogramminglanguagesa">Programming Languages <!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<h3 id="learning-c">Learning C++</h3>
+<ul>
+<li>&ldquo;Programming: Principles and Practice Using C++&rdquo; by Stroustrup.</li>
+<li>&ldquo;Accelerated C++:  Practical Programming by Example&rdquo; by Koenig and Moo.</li>
+<li>&ldquo;Effective C++&rdquo; by Meyers.</li>
+</ul>
+<h3 id="learning-python">Learning Python</h3>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/index.html">The Official Python Tutorial</a>.</li>
+<li>&ldquo;Effective Python: 59 Specific Ways to Write Better Python&rdquo; by Slatkin.</li>
+<li>&ldquo;Python Cookbook: Recipes for Mastering Python 3&rdquo; by Beazly and Jones.</li>
+<li>&ldquo;Fluent Python: Clear, Concise and Effective Programming&rdquo; by Ramahlo.</li>
+</ul>
+<h2 id="editor-a-nameeditora">Editor <!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<p>I have not yet found a project- or outcome-based VS Code tutorial and this is ideally what we would've like to do first. Perhaps we should make one.</p>
+<ul>
+<li><a href="https://vscodecandothat.com/">VS Code Can Do That?!</a></li>
+</ul>
+<h2 id="version-control-a-nameversioncontrola">Version Control <!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<ul>
+<li><a href="https://learngitbranching.js.org/">Learn Git in the Browser</a> by Github.</li>
+<li><a href="https://git-scm.com/book/en/v2">Pro Git</a> by Chacon and Straub.</li>
+</ul>
+<h2 id="software-development-a-namesoftwaredevelopmenta">Software Development <!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<ul>
+<li>&ldquo;Code Complete: A Practical Handbook of Software Construction&rdquo; by McConnel.</li>
+<li>&ldquo;Clean Code: A Handbook of Agile Software Craftsmanship&rdquo; by Martin.</li>
+</ul>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+</div>
+
+<script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+tex2jax: {
+  inlineMath: [['$','$'], ['\\(','\\)']],
+  displayMath: [['$$','$$']],
+  processEscapes: true,
+  processEnvironments: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+  TeX: { equationNumbers: { autoNumber: "AMS" },
+       extensions: ["AMSmath.js", "AMSsymbols.js"] }
+}
+});
+MathJax.Hub.Queue(function() {
+  
+  
+  
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i = 0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+
+MathJax.Hub.Config({
+
+TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script> 
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-started-with-visual-studio-code-and-python">Getting Started with Visual Studio Code and Python</a>
+      <ul>
+        <li><a href="#packages-and-environments-with-conda">Packages and Environments with Conda</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#programming-languages-a-nameprogramminglanguagesa">Programming Languages </a>
+      <ul>
+        <li><a href="#learning-c">Learning C++</a></li>
+        <li><a href="#learning-python">Learning Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#editor-a-nameeditora">Editor </a></li>
+    <li><a href="#version-control-a-nameversioncontrola">Version Control </a></li>
+    <li><a href="#software-development-a-namesoftwaredevelopmenta">Software Development </a></li>
+  </ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
