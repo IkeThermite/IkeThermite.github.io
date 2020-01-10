@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deep Hedging on The Commonplace Book</title>
-    <link>http://example.org/docs/2-projects/deep-hedging/</link>
+    <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/</link>
     <description>Recent content in Deep Hedging on The Commonplace Book</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/docs/2-projects/deep-hedging/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.ralphrudd.com/docs/2-projects/deep-hedging/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Neural Networks for Hedging: Part 2</title>
-      <link>http://example.org/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</link>
+      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</link>
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</guid>
+      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</guid>
       <description>Table of Contents  Introduction A Recurrent Neural Network Learning The Two-step Hedge Next Steps  Introduction  This is Part 2, Part 1 can be found here. All the code for both parts is available on Github. Our goal is to implement the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;, using PyTorch.
 In Part 1, we built a very simple neural net with two hidden layers.</description>
     </item>
     
     <item>
       <title>Neural Networks for Hedging: Part 1</title>
-      <link>http://example.org/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</link>
+      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</link>
       <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</guid>
+      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</guid>
       <description>Table of Contents  Introduction A First Network Learning The Black-Scholes Delta Learning A One-step Hedge Next Steps Resources  Introduction  The purpose of this page is track my progress implementing the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;. In that paper they use a semi-recurrent deep neural network to calculate the appropriate hedging positions when hedging vanilla options.
 They begin in a simulation setting using the Heston model and their network is implemented using TensorFlow.</description>
     </item>

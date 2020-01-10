@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on The Commonplace Book</title>
-    <link>http://example.org/categories/</link>
+    <link>http://www.ralphrudd.com/categories/</link>
     <description>Recent content in Categories on The Commonplace Book</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.ralphrudd.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Development</title>
-      <link>http://example.org/categories/development/</link>
+      <link>http://www.ralphrudd.com/categories/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/categories/development/</guid>
+      <guid>http://www.ralphrudd.com/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>http://example.org/categories/golang/</link>
+      <link>http://www.ralphrudd.com/categories/golang/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/categories/golang/</guid>
+      <guid>http://www.ralphrudd.com/categories/golang/</guid>
       <description></description>
     </item>
     
