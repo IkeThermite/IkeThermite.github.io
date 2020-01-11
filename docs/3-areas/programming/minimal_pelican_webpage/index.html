@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A Minimal Webpage with Pelican"><meta property="og:title" content="A Minimal Webpage with Pelican" />
+<meta property="og:description" content="A Minimal Webpage with Pelican Getting Started I already had Anaconda Python installed, so the first thing to do was to create a conda environment, which I called pelicansite,:
+conda create --name pelicansiteand then activate it: :
+conda activate pelicansiteThis is all done from the Anaconda Prompt so that the correct environment variables are set. Now I can install the pelican package (I don&#39;t need the optional argument for using markdown)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.ralphrudd.com/docs/3-areas/programming/minimal_pelican_webpage/" />
+<meta property="article:published_time" content="2020-01-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-08T00:00:00+00:00" />
+<title>A Minimal Webpage with Pelican | The Commonplace Book</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.e3ca513519c1bf3d15c9b2dbc36617f10bb187b6dbb9c5ceb8e24cae1a1e8017.css" integrity="sha256-48pRNRnBvz0VybLbw2YX8Quxh7bbucXOuOJMrhoegBc=">
+
+
+<script defer src="/en.search.min.6417d5926b20d1d69e972029d6e8756bf3bc864ab93c8c41cc92859ae1a9c034.js" integrity="sha256-ZBfVkmsg0daelyAp1uh1a/O8hkq5PIxBzJKFmuGpwDQ="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="http://www.ralphrudd.com/"><span>The Commonplace Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      <span>Projects</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      <span>Deep Hedging</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/" >
+      Neural Networks for Hedging: Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/" >
+      Neural Networks for Hedging: Part 1
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      <span>Areas</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      <span>Brazilian Jiu Jitsu</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/docs/3-areas/brazilian-jiu-jitsu/brazilian_jiu_jitsu/" >
+      Notes
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      <span>Programming</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/docs/3-areas/programming/working_with_pelican/" >
+      Working with Pelican: Assorted Notes
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/3-areas/programming/minimal_pelican_webpage/"  class="active">
+      A Minimal Webpage with Pelican
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/3-areas/programming/becoming_a_quantitative_developer/" >
+      Becoming a Quantitative Developer (Deprecated)
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      <span>Resources</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/docs/5-archives/" >
+      Archives
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+  <strong>A Minimal Webpage with Pelican</strong>
+</header>
+
+      
+<article class="markdown"><h1 id="a-minimal-webpage-with-pelican">A Minimal Webpage with Pelican</h1>
+<h2 id="getting-started">Getting Started</h2>
+<p>I already had Anaconda Python installed, so the first thing to do was to
+create a <code>conda</code> environment, which I called <code>pelicansite</code>,:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">conda create --name pelicansite
+</code></pre></div><p>and then activate it: :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">conda activate pelicansite
+</code></pre></div><p>This is all done from the Anaconda Prompt so that the correct
+environment variables are set. Now I can install the <code>pelican</code> package
+(I don't need the optional argument for using markdown). :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">conda install pelican
+</code></pre></div><p>Then I create a folder for my webpage and navigate to it. :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"><span style="color:#66d9ef">mkdir</span> mostly-conjecture
+<span style="color:#66d9ef">cd</span> conjecture
+</code></pre></div><p>Finally, I can run <code>pelican-quickstart</code>. My answers to the various
+prompts are provided below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Welcome to pelican-quickstart v4.2.0.
+
+This script will help you create a new Pelican-based website.
+
+Please answer the following questions so this script can generate the files
+needed by Pelican.
+
+
+&gt; Where <span style="color:#66d9ef">do</span> you want to create your new web site? <span style="color:#f92672">[</span>.<span style="color:#f92672">]</span>
+&gt; What will be the title of this web site? Mostly Conjecture
+&gt; Who will be the author of this web site? Ralph Rudd
+&gt; What will be the default language of this web site? <span style="color:#f92672">[</span>English<span style="color:#f92672">]</span>
+&gt; Do you want to specify a URL prefix? e.g., https://example.com   <span style="color:#f92672">(</span>Y/n<span style="color:#f92672">)</span> n
+&gt; Do you want to enable article pagination? <span style="color:#f92672">(</span>Y/n<span style="color:#f92672">)</span> n
+&gt; What is your time zone? <span style="color:#f92672">[</span>Europe/Paris<span style="color:#f92672">]</span> EST
+&gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? <span style="color:#f92672">(</span>Y/n<span style="color:#f92672">)</span> y
+&gt; Do you want to upload your website using FTP? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> n
+&gt; Do you want to upload your website using SSH? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> n
+&gt; Do you want to upload your website using Dropbox? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> n
+&gt; Do you want to upload your website using S3? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> n
+&gt; Do you want to upload your website using Rackspace Cloud Files? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> n
+&gt; Do you want to upload your website using GitHub Pages? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+&gt; Is this your personal page <span style="color:#f92672">(</span>username.github.io<span style="color:#f92672">)</span>? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</code></pre></div><p>This created the following set of files: :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&lt;DIR&gt; content
+&lt;DIR&gt; output
+Makefile
+pelicanconf.py
+publishconf.py
+tasks.py
+</code></pre></div><p>At this point I'm quite worried that I'm going to need to edit the
+<code>Makefile</code> before this is all over. It's been about 8 years since I've
+been in Make-hell, but I don't miss it in the least. Okay, before I can
+generate the site for the first time, I need some content.</p>
+<p>Pelican will categorize the content based on the folder structure,
+unless I disable this. Since I intend to use the P.A.R.A. organizational
+system, that suits me just fine. I create the following file: :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/content/areas/online-portfolio/creating_this_webpage.rst
+</code></pre></div><p>I fill it with the bare minimum necessary for it to build. For reasons
+unknown, it fails unless I include the date. So at this stage,
+<code>creating_this_webpage.rst</code> looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rst" data-lang="rst">Creating this Webpage with Pelican<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>==================================<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">:date:</span> <span style="color:#a6e22e">2020-01-08</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>Now I navigate to the root directory, <code>mostly-conjecture</code>, and build my
+webpage for the first time. :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pelican content
+</code></pre></div><p>This gives me the following warning: :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">WARNING: Docutils has no localization for &#39;english&#39;. Using &#39;en&#39; instead.
+</code></pre></div><p>This bothers me because the default for the <code>pelican-quickstart</code> prompt
+was <code>english</code>. I shudder to think I may have to edit the <code>Makefile</code>, but
+no, this is a variable set inside the <code>pelicanconf.py</code> file as
+<code>DEFAULT_LANG</code>. I change it from <code>&quot;English&quot;</code> to <code>&quot;En&quot;</code> and re-run
+<code>pelican content</code>. This time it runs without warnings or errors. :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">Done: Processed 1 article, 0 drafts, 0 pages, 0 hidden pages and 0 draft pages in 3.69 seconds.
+</code></pre></div><p>In a separate Anaconda prompt I navigate to my site's directory and
+run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">pelican --listen
+</code></pre></div><p>I fire up Chrome and navigate to <code>localhost:8000</code>. Trumpets of victory!
+The first build of the webpage looks like this:</p>
+<p><img src="/img/webpage_build_01.jpg#center" alt="Victory trumpets please."></p>
+<h2 id="modifying-the-quickstart-page">Modifying the Quickstart Page</h2>
+<p>However, when I check my second Anaconda prompt (the one
+&lsquo;&lsquo;listening&rsquo;'), I see that I've picked up a warning:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">WARNING: Unable to find `/favicon.ico` or variations:
+</code></pre></div><p>It goes on to list some variations of the file it's looking for. I
+don't know what a <code>favicon</code> is, but
+<a href="https://en.wikipedia.org/wiki/Favicon">Wikipedia</a> is to the rescue.
+After a quick google (and it might have been a Quorum answer), I head to
+<a href="https://realfavicongenerator.net/">favicongenerator.net</a>. I modify my
+Steam profile icon to be the recommended 260 by 260 pixels and
+<a href="https://realfavicongenerator.net/">favicongenerator.net</a> generates a
+host of different size and types of <code>favicons</code> for me. But where exactly
+do I put it?</p>
+<p>Luckily, someone on StackOverflow has already asked <a href="https://stackoverflow.com/questions/31270373/how-to-add-a-favicon-to-a-pelican-blog">&quot;How to add a
+favicon to a pelican
+blog?&quot;</a>.
+So I place my <code>favicon.ico</code> inside the newly created
+<code>mostly-conjecture\content\extras</code> and add the following lines to my
+<code>pelicanconf.py</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">STATIC_PATHS <span style="color:#f92672">=</span> [
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">extra</span><span style="color:#e6db74">&#39;</span>,
+    ]
+
+EXTRA_PATH_METADATA <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">extra/favicon.ico</span><span style="color:#e6db74">&#39;</span>: {<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">path</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">favicon.ico</span><span style="color:#e6db74">&#39;</span>},
+    }
+</code></pre></div><p>I rerun <code>pelican content</code> and <code>pelican --listen</code> (on the other prompt)
+and BOOM! The warning has disappeared.</p>
+<p>There's a lot happening on the default page and I want to start by
+stripping some of that away. By commenting out the <code>LINKS</code> and <code>SOCIAL</code>
+variables inside my <code>pelicanconf.py</code> the page already shrinks quite a
+bit. But I don't want to work with the <code>notmyidea</code> theme; as there is
+too much going on. Instead, I follow <a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html">this guide from Matt
+Makai</a>
+(the &quot;Modify Site Theme&quot; section) as well as the <a href="https://docs.getpelican.com/en/4.0.1/themes.html">Pelican
+documentation</a> (see
+the Example at the end) and create my own, very basic theme.</p>
+<p>First, I create the theme directory. I'm calling my own theme
+<code>notsosimple</code>. From my site's root directory:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"><span style="color:#66d9ef">mkdir</span> themes/notsosimple/templates
+<span style="color:#66d9ef">mkdir</span> themes/notsosimple/static/css
+</code></pre></div><p>I create a <code>templates/base.html</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">title</span>&gt;{% block title %}{% endblock %}&lt;/<span style="color:#f92672">title</span>&gt;
+  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ SITEURL }}/theme/css/style.css&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+ &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  {% block content %}{% endblock %}
+ &lt;/<span style="color:#f92672">div</span>&gt; 
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>As well as a <code>static/css/style.css</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
+  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">70</span><span style="color:#66d9ef">ch</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">ch</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#66d9ef">auto</span>;
+}
+</code></pre></div><p>The code for <code>base.html</code> is different from Matt's guide, as instead of
+using the
+<a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/">Bootstrap</a>
+framework, I'm linking to my custom stylesheet. The stylesheet is from
+<a href="https://jrl.ninja/etc/1/">58 bytes of css to look great nearly
+everywhere</a>.</p>
+<p>Now the page looks like this:</p>
+<p><img src="/img/webpage_build_02.jpg#center" alt="Minimalist victory trumpets please."></p>
+<p>And that's it. About as minimal as it's going to get.</p>
+<h1 id="to-do">To-do:</h1>
+<ul>
+<li>Replace my favicon with something which is not a beloved and
+trademarked character</li>
+<li>Create a StackOverflow account to upvote the answers which helped
+create this page</li>
+<li>Contact Matt about <code>article.locale_date</code>.</li>
+</ul>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+</div>
+
+<script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+tex2jax: {
+  inlineMath: [['$','$'], ['\\(','\\)']],
+  displayMath: [['$$','$$']],
+  processEscapes: true,
+  processEnvironments: true,
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+  TeX: { equationNumbers: { autoNumber: "AMS" },
+       extensions: ["AMSmath.js", "AMSsymbols.js"] }
+}
+});
+MathJax.Hub.Queue(function() {
+  
+  
+  
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i = 0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+
+MathJax.Hub.Config({
+
+TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script> 
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#modifying-the-quickstart-page">Modifying the Quickstart Page</a></li>
+  </ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

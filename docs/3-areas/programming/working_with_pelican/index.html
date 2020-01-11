@@ -18,7 +18,7 @@ pandoc inputfile.ext -f fromtype -t totype -s -o outputfile.extWhen converting 
 <link rel="stylesheet" href="/book.min.e3ca513519c1bf3d15c9b2dbc36617f10bb187b6dbb9c5ceb8e24cae1a1e8017.css" integrity="sha256-48pRNRnBvz0VybLbw2YX8Quxh7bbucXOuOJMrhoegBc=">
 
 
-<script defer src="/en.search.min.0ac53ebcee496a517a6e17ce78426840d437ce72eba2730085d89cc55c3317ac.js" integrity="sha256-CsU&#43;vO5JalF6bhfOeEJoQNQ3znLronMAhdicxVwzF6w="></script>
+<script defer src="/en.search.min.6417d5926b20d1d69e972029d6e8756bf3bc864ab93c8c41cc92859ae1a9c034.js" integrity="sha256-ZBfVkmsg0daelyAp1uh1a/O8hkq5PIxBzJKFmuGpwDQ="></script>
 
 <!--
 Made with Book Theme
@@ -74,13 +74,7 @@ https://github.com/alex-shpak/hugo-book
 
   <li  class="book-section-flat" >
     
-      
-
-  <a href="/docs/2-projects/" >
-      Projects
-  </a>
-
-
+      <span>Projects</span>
     
 
     
@@ -96,13 +90,7 @@ https://github.com/alex-shpak/hugo-book
 
   <li >
     
-      
-
-  <a href="/docs/2-projects/deep-hedging/" >
-      Deep Hedging
-  </a>
-
-
+      <span>Deep Hedging</span>
     
 
     
@@ -116,7 +104,7 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/" >
+  <a href="/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/" >
       Neural Networks for Hedging: Part 2
   </a>
 
@@ -126,7 +114,7 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/" >
+  <a href="/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/" >
       Neural Networks for Hedging: Part 1
   </a>
 
@@ -158,13 +146,7 @@ https://github.com/alex-shpak/hugo-book
 
   <li  class="book-section-flat" >
     
-      
-
-  <a href="/docs/3-areas/" >
-      Areas
-  </a>
-
-
+      <span>Areas</span>
     
 
     
@@ -180,13 +162,7 @@ https://github.com/alex-shpak/hugo-book
 
   <li >
     
-      
-
-  <a href="/docs/3-areas/brazilian-jiu-jitsu/" >
-      Brazilian Jiu Jitsu
-  </a>
-
-
+      <span>Brazilian Jiu Jitsu</span>
     
 
     
@@ -222,13 +198,7 @@ https://github.com/alex-shpak/hugo-book
 
   <li >
     
-      
-
-  <a href="/docs/3-areas/programming/" >
-      Programming
-  </a>
-
-
+      <span>Programming</span>
     
 
     
@@ -252,7 +222,7 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/docs/3-areas/programming/creating_this_webpage/" >
+  <a href="/docs/3-areas/programming/minimal_pelican_webpage/" >
       A Minimal Webpage with Pelican
   </a>
 
@@ -262,7 +232,7 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/docs/3-areas/programming/2019-04-25-becoming-a-quantitative-developer/" >
+  <a href="/docs/3-areas/programming/becoming_a_quantitative_developer/" >
       Becoming a Quantitative Developer (Deprecated)
   </a>
 
@@ -294,13 +264,7 @@ https://github.com/alex-shpak/hugo-book
 
   <li  class="book-section-flat" >
     
-      
-
-  <a href="/docs/4-resources/" >
-      Resources
-  </a>
-
-
+      <span>Resources</span>
     
 
     
@@ -416,11 +380,11 @@ PLUGINS <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span
 <p>In our minimalist stylesheet, we are not currently providing support for
 the image tag <code>:align: center</code>, i.e., if we place an image in an .rst
 file,</p>
-<pre><code class="language-{.sourceCode" data-lang="{.sourceCode">.. image:: images/webpage_build_02.jpg
-   :width: 600px
-   :alt: Minimalist victory trumpets please.
-   :align: center
-</code></pre><p>the centering will be ignored, because the correct class, in this case,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ReST" data-lang="ReST">.. <span style="color:#f92672">image</span>:: images/webpage_build_02.jpg<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>   <span style="color:#a6e22e">:width:</span> <span style="color:#a6e22e">600px</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>   <span style="color:#a6e22e">:alt:</span> <span style="color:#a6e22e">Minimalist victory trumpets please.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>   <span style="color:#a6e22e">:align:</span> <span style="color:#a6e22e">center</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>the centering will be ignored, because the correct class, in this case,
 <code>align-center</code>, is not defined in the stylesheet. This apparently is a
 problem with the default Penguin themes as well, see <a href="https://github.com/getpelican/pelican/issues/776">this
 issue</a>. The solution

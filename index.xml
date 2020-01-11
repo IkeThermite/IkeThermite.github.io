@@ -58,7 +58,7 @@ We&#39;ll start with creating a new site with a very basic template.</descriptio
       <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/brazilian_jiu_jitsu/</guid>
-      <description>Compiled Brazilian Jiu Jitsu Notes The Canon Gi  John Danaher - Go Further Faster Vol 1 - Pin Escapes John Danaher - Go Further Faster Vol 2 - Guard Retention John Danaher - Go Further Faster Vol 3 - Half Guard John Danaher - Go Further Faster Vol 4 - Closed Guard  No Gi  Gordon Ryan - Systematically Attacking the Guard Gordon Ryan - Systemizing Closed Guard John Danaher - Enter the System - Armbars John Danaher - Enter the System - Back Attacks John Danaher - Enter the System - Front Headlocks John Danaher - Enter the System - Kimura John Danaher - Enter the System - Leg Locks John Danaher - Enter the System - Triangles Lachlan Giles - High Percentage Chokes - No Gi Lachlan Giles - Leg Lock Anthology - 50/50 Lachlan Giles - The Guard Passing Anthology - Half Guard Laclan Giles - The Half Guard Anthology  Current Work  20191206 Estima Lock as a counter to the High Step when passing with Toreando 20191206 Shin to Shin to Deep Half Sweep 20191207 Pressure Passing the Collar Sleeve Guard 20191207 Dump Sweep -&amp;gt; Berimbolo 20191209 Add Lovato&#39;s Toreando sequence to the Stack Passing Sequences 20191218 Scarf Hold entries and attacking sequences 20191218 Follow up to the Breadcutter Choke (maybe the far side Arm Triangle?</description>
+      <description>Compiled Brazilian Jiu Jitsu Notes Current Work  Add Lovato&#39;s Toreando sequence to the Stack Passing Sequences Add Dump Sweep $\rightarrow$ Berimbolo Investigate using the Estima Lock as a counter to the High Step when Toreando passing Shin to Shin Guard to Deep Half Sweep vs Standing Opponent Pressure Passing the Collar Sleeve Guard Scarf Hold entries and attacking sequences Follow up to the Breadcutter Choke (maybe the far side Arm Triangle?</description>
     </item>
     
     <item>
@@ -73,10 +73,10 @@ pandoc inputfile.ext -f fromtype -t totype -s -o outputfile.extWhen converting 
     
     <item>
       <title>A Minimal Webpage with Pelican</title>
-      <link>http://www.ralphrudd.com/docs/3-areas/programming/creating_this_webpage/</link>
+      <link>http://www.ralphrudd.com/docs/3-areas/programming/minimal_pelican_webpage/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/3-areas/programming/creating_this_webpage/</guid>
+      <guid>http://www.ralphrudd.com/docs/3-areas/programming/minimal_pelican_webpage/</guid>
       <description>A Minimal Webpage with Pelican Getting Started I already had Anaconda Python installed, so the first thing to do was to create a conda environment, which I called pelicansite,:
 conda create --name pelicansiteand then activate it: :
 conda activate pelicansiteThis is all done from the Anaconda Prompt so that the correct environment variables are set. Now I can install the pelican package (I don&#39;t need the optional argument for using markdown).</description>
@@ -84,30 +84,30 @@ conda activate pelicansiteThis is all done from the Anaconda Prompt so that the
     
     <item>
       <title>Neural Networks for Hedging: Part 2</title>
-      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</link>
+      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/</link>
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</guid>
-      <description>Table of Contents  Introduction A Recurrent Neural Network Learning The Two-step Hedge Next Steps  Introduction  This is Part 2, Part 1 can be found here. All the code for both parts is available on Github. Our goal is to implement the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;, using PyTorch.
-In Part 1, we built a very simple neural net with two hidden layers.</description>
+      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/</guid>
+      <description>Neural Networks for Hedging: Introduction This is Part 2, Part 1 can be found here. All the code for both parts is available on Github. Our goal is to implement the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;, using PyTorch.
+In Part 1, we built a very simple neural net with two hidden layers. As a first test-case, we used it to approximate the Black-Scholes delta function, when the true analytical delta is used as the loss function.</description>
     </item>
     
     <item>
       <title>Neural Networks for Hedging: Part 1</title>
-      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</link>
+      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/</link>
       <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</guid>
-      <description>Table of Contents  Introduction A First Network Learning The Black-Scholes Delta Learning A One-step Hedge Next Steps Resources  Introduction  The purpose of this page is track my progress implementing the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;. In that paper they use a semi-recurrent deep neural network to calculate the appropriate hedging positions when hedging vanilla options.
-They begin in a simulation setting using the Heston model and their network is implemented using TensorFlow.</description>
+      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/</guid>
+      <description>Neural Networks for Hedging: Part 1 Introduction The purpose of this page is track my progress implementing the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;. In that paper they use a semi-recurrent deep neural network to calculate the appropriate hedging positions when hedging vanilla options.
+They begin in a simulation setting using the Heston model and their network is implemented using TensorFlow. Owing to the current state of machine learning frameworks, as well as to the fact that one of my colleagues already has TensorFlow experience, I have decided to use PyTorch.</description>
     </item>
     
     <item>
       <title>Becoming a Quantitative Developer (Deprecated)</title>
-      <link>http://www.ralphrudd.com/docs/3-areas/programming/2019-04-25-becoming-a-quantitative-developer/</link>
+      <link>http://www.ralphrudd.com/docs/3-areas/programming/becoming_a_quantitative_developer/</link>
       <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/3-areas/programming/2019-04-25-becoming-a-quantitative-developer/</guid>
+      <guid>http://www.ralphrudd.com/docs/3-areas/programming/becoming_a_quantitative_developer/</guid>
       <description>Table of Contents  Introduction Getting Started Resources  Programming Languages Editor Version Control Software Development    Introduction  This page serves as a learning guide for the important skills of a quantitative developer. It is primarily inspired by the QuantStart Self-Study Plan for Becoming a Quantitative Developer. The skills are divided in four rough and overlapping categories:
  Programming: The ability to solve a problem in a specific programming language.</description>
     </item>

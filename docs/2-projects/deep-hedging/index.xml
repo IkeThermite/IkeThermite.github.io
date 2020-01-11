@@ -13,22 +13,22 @@
     
     <item>
       <title>Neural Networks for Hedging: Part 2</title>
-      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</link>
+      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/</link>
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-11-27-neural-networks-for-hedging-2/</guid>
-      <description>Table of Contents  Introduction A Recurrent Neural Network Learning The Two-step Hedge Next Steps  Introduction  This is Part 2, Part 1 can be found here. All the code for both parts is available on Github. Our goal is to implement the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;, using PyTorch.
-In Part 1, we built a very simple neural net with two hidden layers.</description>
+      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/</guid>
+      <description>Neural Networks for Hedging: Introduction This is Part 2, Part 1 can be found here. All the code for both parts is available on Github. Our goal is to implement the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;, using PyTorch.
+In Part 1, we built a very simple neural net with two hidden layers. As a first test-case, we used it to approximate the Black-Scholes delta function, when the true analytical delta is used as the loss function.</description>
     </item>
     
     <item>
       <title>Neural Networks for Hedging: Part 1</title>
-      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</link>
+      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/</link>
       <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/2019-10-22-neural-networks-for-hedging-1/</guid>
-      <description>Table of Contents  Introduction A First Network Learning The Black-Scholes Delta Learning A One-step Hedge Next Steps Resources  Introduction  The purpose of this page is track my progress implementing the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;. In that paper they use a semi-recurrent deep neural network to calculate the appropriate hedging positions when hedging vanilla options.
-They begin in a simulation setting using the Heston model and their network is implemented using TensorFlow.</description>
+      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/</guid>
+      <description>Neural Networks for Hedging: Part 1 Introduction The purpose of this page is track my progress implementing the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;. In that paper they use a semi-recurrent deep neural network to calculate the appropriate hedging positions when hedging vanilla options.
+They begin in a simulation setting using the Heston model and their network is implemented using TensorFlow. Owing to the current state of machine learning frameworks, as well as to the fact that one of my colleagues already has TensorFlow experience, I have decided to use PyTorch.</description>
     </item>
     
   </channel>
