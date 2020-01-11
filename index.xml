@@ -6,7 +6,7 @@
     <description>Recent content in Home on The Commonplace Book</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.ralphrudd.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -50,6 +50,15 @@ We&#39;ll start with creating a new site with a very basic template.</descriptio
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/▾ images/logo.png should become
 ▾ &amp;lt;root&amp;gt;/▾ static/▾ images/logo.png Additionally, you&#39;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Notes</title>
+      <link>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/brazilian_jiu_jitsu/</link>
+      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/brazilian_jiu_jitsu/</guid>
+      <description>Compiled Brazilian Jiu Jitsu Notes The Canon Gi  John Danaher - Go Further Faster Vol 1 - Pin Escapes John Danaher - Go Further Faster Vol 2 - Guard Retention John Danaher - Go Further Faster Vol 3 - Half Guard John Danaher - Go Further Faster Vol 4 - Closed Guard  No Gi  Gordon Ryan - Systematically Attacking the Guard Gordon Ryan - Systemizing Closed Guard John Danaher - Enter the System - Armbars John Danaher - Enter the System - Back Attacks John Danaher - Enter the System - Front Headlocks John Danaher - Enter the System - Kimura John Danaher - Enter the System - Leg Locks John Danaher - Enter the System - Triangles Lachlan Giles - High Percentage Chokes - No Gi Lachlan Giles - Leg Lock Anthology - 50/50 Lachlan Giles - The Guard Passing Anthology - Half Guard Laclan Giles - The Half Guard Anthology  Current Work  20191206 Estima Lock as a counter to the High Step when passing with Toreando 20191206 Shin to Shin to Deep Half Sweep 20191207 Pressure Passing the Collar Sleeve Guard 20191207 Dump Sweep -&amp;gt; Berimbolo 20191209 Add Lovato&#39;s Toreando sequence to the Stack Passing Sequences 20191218 Scarf Hold entries and attacking sequences 20191218 Follow up to the Breadcutter Choke (maybe the far side Arm Triangle?</description>
     </item>
     
     <item>
