@@ -6,18 +6,32 @@
     <description>Recent content in Brazilian Jiu Jitsu on The Commonplace Book</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Notes</title>
-      <link>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/brazilian_jiu_jitsu/</link>
+      <title>Playing Guard</title>
+      <link>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/guard/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/guard/</guid>
+      <description>Playing Guard Butterfly Guard Ude Gatame (Fabio Gurgel) https://www.youtube.com/watch?v=GCLBedHHQvM Shoulder Lock Sweep (Gordon Ryan) https://www.youtube.com/watch?v=VFbUih8C-Lk
+Collar-Sleeve and De La Riva Guard   Sources:
+Gianni Grippo - All About the Bolo Felipe Pena - Back Take from De La Riva Jon Thomas - Understanding De La Riva TECH/STRG - 5 Collar &amp;amp; Sleeve Drills to Improve Your Open Guard Lachlan Giles - Triangle Choke and Overhead Sweep
+  Seated Guard $\rightarrow$ Collar Sleeve</description>
+    </item>
+    
+    <item>
+      <title>Guard Passing</title>
+      <link>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/guard_passing/</link>
       <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/brazilian_jiu_jitsu/</guid>
-      <description>Compiled Brazilian Jiu Jitsu Notes Current Work  Add Lovato&#39;s Toreando sequence to the Stack Passing Sequences Add Dump Sweep $\rightarrow$ Berimbolo Investigate using the Estima Lock as a counter to the High Step when Toreando passing Shin to Shin Guard to Deep Half Sweep vs Standing Opponent Pressure Passing the Collar Sleeve Guard Scarf Hold entries and attacking sequences Follow up to the Breadcutter Choke (maybe the far side Arm Triangle?</description>
+      <guid>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/guard_passing/</guid>
+      <description>Passing the Guard Guard Passing Positions These positions form the central nodes in my system of guard passing.
+Full Staple:
+ Left knee through, pointing in towards his hip. Toes hooked pointing out. His leg on my right shoulder, right hand Mid Straight Lapel Grip, right elbow tight. Head low, looking across far shoulder. Whole body oriented into him. Palm facing on left pants grip to defend against Ude Katame and Sankaku Jime.</description>
     </item>
     
   </channel>
