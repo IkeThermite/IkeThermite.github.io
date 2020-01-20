@@ -83,6 +83,16 @@ conda activate pelicansiteThis is all done from the Anaconda Prompt so that the
     </item>
     
     <item>
+      <title>Neural Networks for Calibration: Part 1</title>
+      <link>http://www.ralphrudd.com/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ralphrudd.com/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/</guid>
+      <description>Neural Networks for Calibration: Part 1 Introduction The purpose of this page is track my experiments with using neural networks to move the hard work of model calibration &amp;ldquo;offline&amp;rdquo;.
+My primary resource is the 2016 paper by Hernandez, &amp;ldquo;Model Calibration with Neural Networks&amp;rdquo;. This served as the inspiration for a &amp;ldquo;2017 Financial Mathematics Team Challenge Project&amp;rdquo;, which was supervised by Josef Teichman. Finally, in 2018 Nicolau Haussamer wrote &amp;ldquo;Model Calibration with Machine Learning&amp;rdquo; as his short dissertation, in partial fulfillment of his MPhil in Mathematical Finance at the University of Cape Town.</description>
+    </item>
+    
+    <item>
       <title>Neural Networks for Hedging: Part 2</title>
       <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/</link>
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
