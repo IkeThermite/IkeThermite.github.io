@@ -58,9 +58,9 @@ We&#39;ll start with creating a new site with a very basic template.</descriptio
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://www.ralphrudd.com/docs/3-areas/brazilian-jiu-jitsu/guard/</guid>
-      <description>Playing Guard Cross Collar Sleeve Guard Overview Three Keys to Dominant Position:
- Keep opponent&#39;s head below his hips. Keep his lead elbow inside my hips. Keep his outside elbow out and away from his body.  Some Principles:
- Collar grip must be above his shoulder. Constantly work it up until it&#39;s behind his neck. Sticky foot on the bicep. Four points of connection make it easy to rotate with your opponent.</description>
+      <description>Playing Guard No Gi Seated Guard Standing vs Seated Guard Options:
+ Inside Position: Straight Hamstring (Headquarters) or Cross Hamstring (Cross Knee). Around the Guard (Double Outside Position): Toreando / X Pass. Over or Under the Guard: Rolling Kimura / Rolling Guillotine. Push back to Double Ankle or Double Under Grips.  Some Seated Guard Principles:
+ Don&#39;t want to be on my back. So sit curled up, shoulders in front of the line of my hips.</description>
     </item>
     
     <item>
@@ -96,12 +96,12 @@ conda activate pelicansiteThis is all done from the Anaconda Prompt so that the
     </item>
     
     <item>
-      <title>Neural Networks for Calibration: Part 1</title>
+      <title>Neural Networks for Calibration</title>
       <link>http://www.ralphrudd.com/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://www.ralphrudd.com/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/</guid>
-      <description>Neural Networks for Calibration: Part 1 Introduction The purpose of this page is track my experiments with using neural networks to move the hard work of model calibration &amp;ldquo;offline&amp;rdquo;.
+      <description>Neural Networks for Calibration Introduction The purpose of this page is track my experiments with using neural networks to move the hard work of model calibration &amp;ldquo;offline&amp;rdquo;.
 My primary resource is the 2016 paper by Hernandez, &amp;ldquo;Model Calibration with Neural Networks&amp;rdquo;. This served as the inspiration for a &amp;ldquo;2017 Financial Mathematics Team Challenge Project&amp;rdquo;, which was supervised by Josef Teichman. Finally, in 2018 Nicolau Haussamer wrote &amp;ldquo;Model Calibration with Machine Learning&amp;rdquo; as his short dissertation, in partial fulfillment of his MPhil in Mathematical Finance at the University of Cape Town.</description>
     </item>
     

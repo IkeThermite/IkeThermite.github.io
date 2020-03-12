@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Neural Networks for Calibration: Part 1"><meta property="og:title" content="Neural Networks for Calibration: Part 1" />
-<meta property="og:description" content="Neural Networks for Calibration: Part 1 Introduction The purpose of this page is track my experiments with using neural networks to move the hard work of model calibration &ldquo;offline&rdquo;.
+<meta name="description" content="Neural Networks for Calibration"><meta property="og:title" content="Neural Networks for Calibration" />
+<meta property="og:description" content="Neural Networks for Calibration Introduction The purpose of this page is track my experiments with using neural networks to move the hard work of model calibration &ldquo;offline&rdquo;.
 My primary resource is the 2016 paper by Hernandez, &ldquo;Model Calibration with Neural Networks&rdquo;. This served as the inspiration for a &ldquo;2017 Financial Mathematics Team Challenge Project&rdquo;, which was supervised by Josef Teichman. Finally, in 2018 Nicolau Haussamer wrote &ldquo;Model Calibration with Machine Learning&rdquo; as his short dissertation, in partial fulfillment of his MPhil in Mathematical Finance at the University of Cape Town." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.ralphrudd.com/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/" />
 <meta property="article:published_time" content="2020-01-03T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-03T00:00:00+00:00" />
-<title>Neural Networks for Calibration: Part 1 | The Commonplace Book</title>
+<title>Neural Networks for Calibration | The Commonplace Book</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
 <link rel="stylesheet" href="/book.min.e3ca513519c1bf3d15c9b2dbc36617f10bb187b6dbb9c5ceb8e24cae1a1e8017.css" integrity="sha256-48pRNRnBvz0VybLbw2YX8Quxh7bbucXOuOJMrhoegBc=">
 
 
-<script defer src="/en.search.min.67334b1a7cea8f79b7d33c4713cd9e783b0f81a45f1137382d9da0ecb7df9be1.js" integrity="sha256-ZzNLGnzqj3m30zxHE82eeDsPgaRfETc4LZ2g7Lffm&#43;E="></script>
+<script defer src="/en.search.min.2b62a6bfb0f048ac96d45936f6dacaa0327a467a8a8b4a2e429af6c35c4d5c55.js" integrity="sha256-K2Kmv7DwSKyW1Fk29trKoDJ6RnqKi0ouQpr2w1xNXFU="></script>
 
 <!--
 Made with Book Theme
@@ -105,7 +105,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   <a href="/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/"  class="active">
-      Neural Networks for Calibration: Part 1
+      Neural Networks for Calibration
   </a>
 
 </li>
@@ -400,11 +400,11 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
-  <strong>Neural Networks for Calibration: Part 1</strong>
+  <strong>Neural Networks for Calibration</strong>
 </header>
 
       
-<article class="markdown"><h1 id="neural-networks-for-calibration-part-1">Neural Networks for Calibration: Part 1</h1>
+<article class="markdown"><h1 id="neural-networks-for-calibration">Neural Networks for Calibration</h1>
 <h2 id="introduction">Introduction</h2>
 <p>The purpose of this page is track my experiments with using neural networks to move the hard work of model calibration &ldquo;offline&rdquo;.</p>
 <p>My primary resource is the 2016 paper by Hernandez, <a href="">&ldquo;Model Calibration with Neural Networks&rdquo;</a>.
@@ -441,7 +441,27 @@ Let's take one step up.</p>
 <h2 id="calibrating-a-two-parameter-model">Calibrating a Two-parameter Model</h2>
 <p>Consider the CEV model, a generalization of Black-Scholes:
 $$ dS_t = rS_t dt + \sigma S^\alpha_t dW_t $$
-Now, given an option price, I want my network to be able to determine the parameter set, $\Theta=(\sigma, \alpha)$ that produced it.</p>
+Now, given an option price, I want my network to be able to determine the parameter set, $\Theta=(\sigma, \alpha)$ that produced it.
+So, I want to learn the inverse of the pricing function below.
+<img src="/img/cev_calibration.jpg#center" alt="The input CEV option prices."></p>
+<p>The neural net needs some adapting, as we now require two outputs, not just the implied volatility:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Net</span>(nn<span style="color:#f92672">.</span>Module):
+    <span style="color:#66d9ef">def</span> __init__(self, num_neurons):
+        super(Net, self)<span style="color:#f92672">.</span>__init__()
+        self<span style="color:#f92672">.</span>lin1 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">1</span>, num_neurons)
+        self<span style="color:#f92672">.</span>softplus1 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Softplus()
+        self<span style="color:#f92672">.</span>bn2 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>BatchNorm1d(num_neurons, affine<span style="color:#f92672">=</span>False)
+        self<span style="color:#f92672">.</span>lin2 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(num_neurons, <span style="color:#ae81ff">2</span>) <span style="color:#75715e"># must return alpha and sigma</span>
+        self<span style="color:#f92672">.</span>softplus2 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Softplus()
+        
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, out):
+        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>softplus1(self<span style="color:#f92672">.</span>lin1(out))
+        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>bn2(out)
+        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>softplus2(self<span style="color:#f92672">.</span>lin2(out))
+        <span style="color:#66d9ef">return</span> out
+</code></pre></div><p>Other than that, it stays the same. And again, stochastic gradient descent is all we need for easy convergence.
+For the training set, I used option prices generated from a 250 by 250 grid of $(\sigma, \alpha)$ pairs.</p>
+<p><img src="/img/cev_calibration.gif#center" alt="Learning the CEV option pricing surface."></p>
 </article>
 
       <div class="book-footer justify-between">
