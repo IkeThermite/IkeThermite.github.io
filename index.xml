@@ -97,31 +97,31 @@ conda activate pelicansiteThis is all done from the Anaconda Prompt so that the
     
     <item>
       <title>Neural Networks for Calibration</title>
-      <link>http://www.ralphrudd.com/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/</link>
+      <link>http://www.ralphrudd.com/docs/2-projects/neural_networks_for_calibration_1/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/</guid>
+      <guid>http://www.ralphrudd.com/docs/2-projects/neural_networks_for_calibration_1/</guid>
       <description>Neural Networks for Calibration Introduction The purpose of this page is track my experiments with using neural networks to move the hard work of model calibration &amp;ldquo;offline&amp;rdquo;.
 My primary resource is the 2016 paper by Hernandez, &amp;ldquo;Model Calibration with Neural Networks&amp;rdquo;. This served as the inspiration for a &amp;ldquo;2017 Financial Mathematics Team Challenge Project&amp;rdquo;, which was supervised by Josef Teichman. Finally, in 2018 Nicolau Haussamer wrote &amp;ldquo;Model Calibration with Machine Learning&amp;rdquo; as his short dissertation, in partial fulfillment of his MPhil in Mathematical Finance at the University of Cape Town.</description>
     </item>
     
     <item>
-      <title>Neural Networks for Hedging: Part 2</title>
-      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/</link>
+      <title>Neural Networks for Hedging II</title>
+      <link>http://www.ralphrudd.com/docs/2-projects/neural-networks-for-hedging-2/</link>
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/</guid>
-      <description>Neural Networks for Hedging: Introduction This is Part 2, Part 1 can be found here. All the code for both parts is available on Github. Our goal is to implement the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;, using PyTorch.
+      <guid>http://www.ralphrudd.com/docs/2-projects/neural-networks-for-hedging-2/</guid>
+      <description>Neural Networks for Hedging II Introduction This is Part 2, Part 1 can be found here. All the code for both parts is available on Github. Our goal is to implement the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;, using PyTorch.
 In Part 1, we built a very simple neural net with two hidden layers. As a first test-case, we used it to approximate the Black-Scholes delta function, when the true analytical delta is used as the loss function.</description>
     </item>
     
     <item>
-      <title>Neural Networks for Hedging: Part 1</title>
-      <link>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/</link>
+      <title>Neural Networks for Hedging I</title>
+      <link>http://www.ralphrudd.com/docs/2-projects/neural-networks-for-hedging-1/</link>
       <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/</guid>
-      <description>Neural Networks for Hedging: Part 1 Introduction The purpose of this page is track my progress implementing the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;. In that paper they use a semi-recurrent deep neural network to calculate the appropriate hedging positions when hedging vanilla options.
+      <guid>http://www.ralphrudd.com/docs/2-projects/neural-networks-for-hedging-1/</guid>
+      <description>Neural Networks for Hedging I Introduction The purpose of this page is track my progress implementing the 2018 (published in 2019) paper by Beuhler et al., &amp;ldquo;Deep Hedging&amp;rdquo;. In that paper they use a semi-recurrent deep neural network to calculate the appropriate hedging positions when hedging vanilla options.
 They begin in a simulation setting using the Heston model and their network is implemented using TensorFlow. Owing to the current state of machine learning frameworks, as well as to the fact that one of my colleagues already has TensorFlow experience, I have decided to use PyTorch.</description>
     </item>
     

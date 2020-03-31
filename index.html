@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/book.min.e3ca513519c1bf3d15c9b2dbc36617f10bb187b6dbb9c5ceb8e24cae1a1e8017.css" integrity="sha256-48pRNRnBvz0VybLbw2YX8Quxh7bbucXOuOJMrhoegBc=">
 
 
-<script defer src="/en.search.min.2b62a6bfb0f048ac96d45936f6dacaa0327a467a8a8b4a2e429af6c35c4d5c55.js" integrity="sha256-K2Kmv7DwSKyW1Fk29trKoDJ6RnqKi0ouQpr2w1xNXFU="></script>
+<script defer src="/en.search.min.ee091f474c23225c6194dbff77f8ae73e904b25ba0b30c2fcf7a4b8cf743bd0c.js" integrity="sha256-7gkfR0wjIlxhlNv/d/iuc&#43;kEslugswwvz3pLjPdDvQw="></script>
 
 <link rel="alternate" type="application/rss+xml" href="http://www.ralphrudd.com/index.xml" title="The Commonplace Book" />
 <!--
@@ -86,62 +86,20 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li >
-    
-      <span>Deep Hedging</span>
-    
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
         <li>
 
-  <a href="/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/" >
+  <a href="/docs/2-projects/neural_networks_for_calibration_1/" >
       Neural Networks for Calibration
   </a>
 
 </li>
       
     
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li >
-    
-      <span>Deep Hedging</span>
-    
-
-    
-
-
-
-
-  
-  <ul>
-    
       
         <li>
 
-  <a href="/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/" >
-      Neural Networks for Hedging: Part 2
+  <a href="/docs/2-projects/neural-networks-for-hedging-2/" >
+      Neural Networks for Hedging II
   </a>
 
 </li>
@@ -150,21 +108,11 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/" >
-      Neural Networks for Hedging: Part 1
+  <a href="/docs/2-projects/neural-networks-for-hedging-1/" >
+      Neural Networks for Hedging I
   </a>
 
 </li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
       
     
   </ul>
@@ -301,6 +249,38 @@ https://github.com/alex-shpak/hugo-book
 
       
     
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/docs/3-areas/youtube-channel/" >
+      YouTube Channel
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
   </ul>
   
 
@@ -406,7 +386,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown"><h1 id="the-commonplace-book">The Commonplace Book</h1>
 <p>My goal is to create a webpage to serve as a personal knowledge
-management system (PKM). I'm inspired by the <a href="https://wiki.nikitavoloboev.xyz/">Everything I
+management system (PKM) or <a href="https://en.wikipedia.org/wiki/Commonplace_book">commonplace book</a>. I'm inspired by the <a href="https://wiki.nikitavoloboev.xyz/">Everything I
 know</a> PKM Gitbook by <a href="https://nikitavoloboev.xyz/">Nikita
 Voloboev</a> as well the <a href="https://www.buildingasecondbrain.com/">Building a Second
 Brain</a> course by <a href="https://www.fortelabs.co/">Tiago
@@ -416,41 +396,21 @@ system <a href="#here">here</a>.</p>
 effectively, its formatting is not rich enough for what I want to
 achieve. An option was <a href="#Notion">Notion</a> but I am committed to storing
 all my knowledge in plain text.</p>
-<p>What I want for my webpage:</p>
-<ul>
-<li>Static</li>
-<li>Minimalist</li>
-<li>Energy efficient</li>
-<li>Fast</li>
-<li>Complete easy workflow from within Emacs
-<ul>
-<li>Perhaps something like org-mode to md to html?</li>
-</ul>
-</li>
-<li>Something simple enough that I can understand it's inner workings</li>
-</ul>
-<p>What I want my webpage to contain:</p>
-<ul>
-<li>Technical tutorials to remind myself how to accomplish complex tasks
-<ul>
-<li>Perhaps even checklists as motivated by <a href="http://atulgawande.com/book/the-checklist-manifesto/">The Checklist
-Manifesto</a>?</li>
-</ul>
-</li>
-<li>Easy to navigate Brazilian Jiu Jitsu knowledge database</li>
-</ul>
-<p>Other options I considered for creating this webpage:</p>
+<p>I previously considered two other options for this webpage, before settling on <a href="https://gohugo.io/">Hugo</a>:</p>
 <ul>
 <li>Pelican, which uses Python and can use either Markdown or
-reStructuredText</li>
-<li>Jekyll, which uses Ruby and Markdown (and which I've used briefly
-before)</li>
-<li>Gitbooks, based on Github and used by Nikita</li>
+reStructuredText (I've kept notes <a href="https://www.ralphrudd.com/docs/3-areas/programming/working_with_pelican/">here</a> and <a href="https://www.ralphrudd.com/docs/3-areas/programming/minimal_pelican_webpage/">here</a>)</li>
+<li>Jekyll, which uses Ruby and Markdown (I've used this before, but failed to keep good notes)</li>
 </ul>
-<p>Things I don't yet know how to do:</p>
+<p><strong>Design Goals:</strong></p>
+<p>I want my webpage to be <em>static</em>, <em>minimalist</em>, <em>energy efficient</em> and <em>fast</em>.
+Furthermore, it must be <em>simple</em> enough that I can understand all parts of it.</p>
+<p><strong>Content Goals:</strong></p>
 <ul>
-<li>Continuous integration and deployment with Travis CI</li>
+<li>Technical tutorials to remind myself how to accomplish complex tasks</li>
+<li>Easy to navigate Brazilian Jiu Jitsu knowledge database</li>
 </ul>
+<p><img src="/img/RRudd_Banner.jpg#center" alt="Brief Bio of Dr Ralph Rudd."></p>
 </article>
 
       <div class="book-footer justify-between">

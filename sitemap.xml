@@ -8,6 +8,7 @@
   
   <url>
     <loc>http://www.ralphrudd.com/docs/2-projects/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -72,27 +73,17 @@
   </url>
   
   <url>
-    <loc>http://www.ralphrudd.com/docs/2-projects/deep-calibration/</loc>
+    <loc>http://www.ralphrudd.com/docs/2-projects/neural_networks_for_calibration_1/</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ralphrudd.com/docs/2-projects/deep-calibration/neural_networks_for_calibration_1/</loc>
-    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.ralphrudd.com/docs/2-projects/deep-hedging/</loc>
+    <loc>http://www.ralphrudd.com/docs/2-projects/neural-networks-for-hedging-2/</loc>
     <lastmod>2019-11-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-2/</loc>
-    <lastmod>2019-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.ralphrudd.com/docs/2-projects/deep-hedging/neural-networks-for-hedging-1/</loc>
+    <loc>http://www.ralphrudd.com/docs/2-projects/neural-networks-for-hedging-1/</loc>
     <lastmod>2019-10-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -232,6 +223,10 @@
   
   <url>
     <loc>http://www.ralphrudd.com/docs/5-archives/example/table-of-contents/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.ralphrudd.com/docs/3-areas/youtube-channel/</loc>
   </url>
   
 </urlset>
