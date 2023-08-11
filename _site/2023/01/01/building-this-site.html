@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>How to Build this Site</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name='description' content='Ralph Rudd is an academic at Reykjavik University.'>
+    <meta name='author' content='Ralph Rudd'>
+    
+    <link href='/css/blog.css' rel='stylesheet'/>
+    <link href='/css/trac.css' rel='stylesheet'/>
+    <link href='/css/markdown.css' rel='stylesheet'/>
+  </head>
+  <!-- for mathjax support -->
+  
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <body>
+    <div class='content'>
+      <div class='nav'>
+    <ul class='wrap'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/blog'>Blog</a></li>
+        <li><a href='/research'>Research</a></li>
+        <li><a href='/about'>About</a></li>
+    </ul>
+</div>
+      <div class='front-matter'>
+          <div class='wrap'>
+              <h1>How to Build this Site</h1>
+              <h4></h4>
+              <!-- <div class='bylines'>
+                  <div class='byline'>
+                      <h3>Published</h3>
+                      <p>01 January 2023</p>
+                  </div>
+              </div> -->
+              <div class='clear'></div>
+          </div>
+      </div>
+      <div class='wrap article'>
+          <p>I update this site fairly infrequently and thus I keep forgetting how to do it. So this is a step-by-step recipe.</p>
+
+<p>This is a <a href="https://en.wikipedia.org/wiki/Static_web_page">static site</a> built using <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+
+<h4 id="to-edit-the-site">To Edit the Site</h4>
+
+<ul>
+  <li>Open the site root folder in VS Code.</li>
+  <li>All the pages are markdown files kept in the root folder.</li>
+  <li>All the posts are markdown files kept in the <code class="language-plaintext highlighter-rouge">_posts</code>.</li>
+  <li>I’m using the <a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a> extension for editing markdown files in VS Code.</li>
+  <li>When writing a new post, just mimic the headers of the previous posts.</li>
+</ul>
+
+<h4 id="to-build-locally">To Build Locally</h4>
+
+<ul>
+  <li>Open the site root folder in Git Bash.</li>
+  <li><code class="language-plaintext highlighter-rouge">exec jekyll serve</code>
+    <ul>
+      <li>This builds the site and hosts it locally to <code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/</code>.</li>
+      <li>Saving any edits will rebuilt the site, but you still need to refresh the browser to see the changes.</li>
+    </ul>
+  </li>
+</ul>
+
+      </div>
+  </div>
+  </body>
+</html>

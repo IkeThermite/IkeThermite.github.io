@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Support Vector Machines - Part 1: Hyperplane Classifiers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name='description' content='Ralph Rudd is an academic at Reykjavik University.'>
+    <meta name='author' content='Ralph Rudd'>
+    
+    <link href='/css/blog.css' rel='stylesheet'/>
+    <link href='/css/trac.css' rel='stylesheet'/>
+    <link href='/css/markdown.css' rel='stylesheet'/>
+  </head>
+  <!-- for mathjax support -->
+  
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <body>
+    <div class='content'>
+      <div class='nav'>
+    <ul class='wrap'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/blog'>Blog</a></li>
+        <li><a href='/research'>Research</a></li>
+        <li><a href='/about'>About</a></li>
+    </ul>
+</div>
+      <div class='front-matter'>
+          <div class='wrap'>
+              <h1>Support Vector Machines - Part 1: Hyperplane Classifiers</h1>
+              <h4></h4>
+              <!-- <div class='bylines'>
+                  <div class='byline'>
+                      <h3>Published</h3>
+                      <p>17 April 2023</p>
+                  </div>
+              </div> -->
+              <div class='clear'></div>
+          </div>
+      </div>
+      <div class='wrap article'>
+          <p>These notes are part 1 of 6 lectures I gave at the University of Kiev in April 2023, for the <a href="https://probability.knu.ua/?lan=en&amp;">Machine Learning Algorithms</a> course.</p>
+
+<ol>
+  <li><a href="/2023/04/17/svms-1">Support Vector Machines - Part 1: Hyperplane Classifiers</a></li>
+  <li><a href="/2023/04/18/svms-2">Support Vector Machines - Part 2: SVCs and SVMs</a></li>
+</ol>
+
+<p>Additional lectures in this series were taught by <a href="https://www.linkedin.com/in/petra-posedel-%C5%A1imovi%C4%87-96b5553/">Petra Posedel Šimović</a> from the University of Zagreb and <a href="https://www.linkedin.com/in/ramonprat/">Ramón Prat Casanovas</a> from the Autonomous University of Barcelona.</p>
+
+<p>These lectures are heavily based on <a href="https://hastie.su.domains/ElemStatLearn/">2006 - Hastie et al - Elements of Statistical Learning</a>, which I can highly recommend.</p>
+
+<h2 id="separating-hyperplane-classifiers">Separating Hyperplane Classifiers</h2>
+<p><em>Separating hyperplane classifiers</em> construct linear decision boundaries that explicitly try to separate the data into different classes as well as possible.</p>
+
+<h3 id="geometry-of-hyperplanes">Geometry of Hyperplanes</h3>
+<p>Let</p>
+
+\[f(x) = x^\top\beta + \beta_0,\]
+
+<p>with $\beta, x\in\mathbb{R}^p$ and $\beta_0$ a scalar <em>offset</em> or <em>intercept</em>. Consider the hyperplane / affine set $L$ defined by</p>
+
+\[L := \{x\in\mathbb{R}^p: f(x) = 0 \}.\]
+
+<p>We focus now on three properties of hyperplanes that are essential to our construction of hyperplane classifiers.</p>
+
+<p><strong>Property 1:</strong> <em>The normal to the surface $L$ is given by</em>
+\(\beta^* := \frac{1}{\lVert \beta \rVert}\beta.\)</p>
+
+<p>Proof:
+For any two points, $x_1,x_2\in L$,</p>
+
+\[\begin{align}
+\beta^\top(x_1 - x_2)&amp;=-\beta_0 - (-\beta_0) \\
+&amp;= 0,
+\end{align}\]
+
+<p>where $(x_2-x_1)$ is parallel to the surface $L$.</p>
+
+<p><strong>Property 2:</strong> <em>The signed distance from any point $x\in\mathbb{R}$ to the hyperplane $L$ is given by $\frac{1}{\lVert \beta \rVert} f(x)$, i.e., $f(x)$ is proportional to the signed distance from $x$ to the hyperplane defined by $f(x)=0$.</em></p>
+
+<p>Proof:
+For any $x\in\mathbb{R}^p$ and $x_0\in L$, $(x-x_0)$ represents a vector pointing from $x$ to the hyperplane. Then the signed distance from $x$ to the hyperplane is the projection of this vector onto the normal of $L$.
+Thus,</p>
+
+\[\begin{aligned}
+\beta^{* \top}\left(x-x_0\right) &amp; =\frac{1}{\|\beta\|}\left(\beta^\top x+\beta_0\right), \\
+&amp; =\frac{1}{\left\|f^{\prime}(x)\right\|} f(x) .
+\end{aligned}\]
+
+<p><strong>Property 3:</strong> <em>All points on one side of the hyperplane satisfy $f(x)&gt;0$, whereas all points on the other side of the hyperplane satisfy $f(x)&lt;0$.</em></p>
+
+<p>Proof: Follows directly from Property 2.</p>
+
+<h3 id="the-separating-hyperplane-classifier">The Separating Hyperplane Classifier</h3>
+<p><strong>Definition: (Linear Separability)</strong>
+<em>Consider two sets in $\mathbb{R}^p$, $X_1$ and $X_2$. These sets are said to be <strong>linearly separable</strong> if there exists a $\beta\in\mathbb{R}^p$ and a $\beta_0\in\mathbb{R}$ such that $f(x)&gt;0$ for every $x\in X_1$ and $f(x)&lt;0$ for every $x\in X_2$.</em></p>
+
+<p>Now consider a set of $N$ pairs of training data,</p>
+
+\[\mathcal{D} = \{(x_i, y_i) | x_i\in\mathbb{R}^p,\ y_i\in\{-1, 1 \}\}_{i=1}^N,\]
+
+<p>and a classification induced by $f(x)$,</p>
+
+\[G(x)=\operatorname{sign}\left[x^\top \beta+\beta_0\right].\]
+
+<p>If the classes are <em>linearly separable</em>, there exists a hyperplane that separates them from each other; assigning to all data points on one a side a specific sign and to all the data points on the other side the opposite sign.</p>
+
+<p>Thus, there exists a $f(x) = x^\top\beta + \beta_0$ that will have the property $y_if(x_i)&gt;0$ for all $i$ (this occurs when all the data is correctly classified by the classifier induced by $f$.)</p>
+
+<p>We can attempt to exploit this property to help find $f$, by setting up the minimization problem</p>
+
+\[\min_{\beta,\,\beta_0} - \sum_{i\in\mathcal{M}}y_i(x_i^\top\beta + \beta_0),\]
+
+<p>where $\mathcal{M}$ is the set of points misclassified by the starting $\beta$ and $\beta_0$. In fact, this was one of the earlier approaches to the problem of finding separating hyperplanes, known as <em>Rosenblatt’s perceptron learning algorithm.</em></p>
+
+<p>This approach has several issues, but the primary one is that it has many solutions, and which one is found depends on the starting point. This issue can be overcome by adding additional constraints to the separating hyperplane.</p>
+
+<h3 id="the-optimal-separating-hyperplane-classifier">The Optimal Separating Hyperplane Classifier</h3>
+<p>The <em>optimal separating hyperplane</em> separates the two classes AND maximizes the distance to the closest point from either class. This provides a unique solution to the separating hyperplane problem and results in a better classifier.</p>
+
+<p>So we consider maximizing the <em>margin</em>, $M\in\mathbb{R}^+$, such that each point is at least the distance $M$ away from the separating hyperplane,</p>
+
+\[\max_{\beta,\,\beta_0} M \quad\mathrm{s.t.}\quad y_i\left[\frac{1}{\|\beta\|}(x_i^\top\beta + \beta_0)\right]\geq M,\text{ for } i=1,\dots,N.\]
+
+<p>We have already shown that the term inside the square brackets is the signed distance from $x_i$ to the hyperplane. The product with $y_i$ attempts to ensure that each point is classified correctly.</p>
+
+<p>It should be clear that for any $\beta$ and $\beta_0$ that satisfies this inequality, any positively scaled multiple of them will satisfy the inequality as well. To remove this extra degree of freedom we can write our margin in terms of our norm, so we set ${\lVert\beta\rVert}=1 / M$.</p>
+
+<p>Our problem becomes</p>
+
+\[\begin{aligned}
+&amp;\max_{\beta,\,\beta_0} \frac{1}{\|\beta\|} \quad\mathrm{s.t.}\quad y_i(x_i^\top\beta + \beta_0)\geq 1, \text{ for } i=1,\dots,N,
+&amp;
+\end{aligned}\]
+
+<p>or equivalently,</p>
+
+\[\begin{aligned}
+&amp;\min_{\beta,\,\beta_0} {\|\beta\|} \quad\mathrm{s.t.}\quad y_i(x_i^\top\beta + \beta_0)\geq 1, \text{ for } i=1,\dots,N.
+&amp;
+\end{aligned}\]
+
+<p>Thus, we are minimizing ${\lVert\beta\rVert}$ while ensuring all the points are at least $\frac{1}{\lVert\beta\rVert}$ away from the hyperplane.</p>
+
+<p>The objective function is convex and the constraint equations are linear inequalities. If they were linear equalities, we would use the method of Lagrange multipliers. Instead, we rely on the generalization, often called the Karush-Kuhn-Tucker approach.</p>
+
+<h3 id="computing-the-optimal-separating-hyperplane-classifier">Computing the Optimal Separating Hyperplane Classifier</h3>
+<p>First, we re-write our problem such that the derivatives are slightly neater and the constraints are in the standard form,</p>
+
+\[\min_{\beta,\,\beta_0} \frac{1}{2}{\|\beta\|^2} \quad\mathrm{s.t.}\quad y_i(x_i^\top\beta + \beta_0)-1\geq 0, \text{ for } i=1,\dots,N.\]
+
+<p>This problem can be solved using standard software (although it is usually transformed into its dual formulation). However, to gain insight into the solution we will now examine the Lagrangian,</p>
+
+\[\mathcal{L}\left(l,\alpha\right) = \frac{1}{2}{\|\beta\|^2} -\sum_{i=1}^N\alpha_i\left[y_i(x_i^\top\beta + \beta_0)-1\right],\]
+
+<p>with $l=(\beta,\beta_0)^\top$ a vector containing the variables w.r.t. which we want to minimize the function and $\alpha=(\alpha_1,\dots,\alpha_N)$ the vector of the Lagrange multipliers.</p>
+
+<p>For the vector $l = (\beta,\beta_0)^\top$ to be a saddle point of the Lagrangian above as well as a solution to the original minimization problem, it needs to satisfy a set of conditions known as the Karush-Kuhn-Tucker conditions (see Theorem 12.1 in 2006 - Nocedal Wright - Numerical Optimization), which uniquely characterize the solution. Three of these conditions are relevant to our understanding of optimal hyperplane classifiers.</p>
+
+<p>The first is obtained by setting the partial derivative of $\mathcal{L}$ w.r.t $\beta$ equal to zero (a necessary condition for a saddle point), which provides</p>
+
+\[\beta=\sum_{i=1}^N \alpha_i y_i x_i.\]
+
+<p>The further two conditions that are relevant to us are</p>
+
+\[\alpha_i\geq0\qquad\text{and}\qquad\alpha_i\left[y_i(x_i^\top\beta + \beta_0)-1\right]=0\]
+
+<p>for $i=1,\dots,N$.</p>
+
+<p>For each $i$, the final condition can be satisfied in one of two ways:</p>
+<ol>
+  <li>Either $\alpha_i=0$, in which case the constraint is called <em>inactive</em>, as it plays no role in determining the solution $\beta$.</li>
+  <li>$\alpha_i\geq 0$ and $y_i(x_i^\top\beta + \beta_0)=1$</li>
+</ol>
+
+<p>In the second case, the data point $x_i$ lies exactly on the boundary of the slab defined by the optimal hyperplane and our margin. This point is known as a <em>support point</em> or <em>support vector</em> and it is clear from our first condition that it is only these points that dictate our solution!
+Note however, that finding these points require using the entire data set.</p>
+
+      </div>
+  </div>
+  </body>
+</html>

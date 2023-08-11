@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Support Vector Machines - Part 2: SVCs and SVMs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name='description' content='Ralph Rudd is an academic at Reykjavik University.'>
+    <meta name='author' content='Ralph Rudd'>
+    
+    <link href='/css/blog.css' rel='stylesheet'/>
+    <link href='/css/trac.css' rel='stylesheet'/>
+    <link href='/css/markdown.css' rel='stylesheet'/>
+  </head>
+  <!-- for mathjax support -->
+  
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <body>
+    <div class='content'>
+      <div class='nav'>
+    <ul class='wrap'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/blog'>Blog</a></li>
+        <li><a href='/research'>Research</a></li>
+        <li><a href='/about'>About</a></li>
+    </ul>
+</div>
+      <div class='front-matter'>
+          <div class='wrap'>
+              <h1>Support Vector Machines - Part 2: SVCs and SVMs</h1>
+              <h4></h4>
+              <!-- <div class='bylines'>
+                  <div class='byline'>
+                      <h3>Published</h3>
+                      <p>18 April 2023</p>
+                  </div>
+              </div> -->
+              <div class='clear'></div>
+          </div>
+      </div>
+      <div class='wrap article'>
+          <p>These notes are part 2 of 6 lectures I gave at the University of Kiev in April 2023, for the <a href="https://probability.knu.ua/?lan=en&amp;">Machine Learning Algorithms</a> course.</p>
+
+<ol>
+  <li><a href="/2023/04/17/svms-1">Support Vector Machines - Part 1: Hyperplane Classifiers</a></li>
+  <li><a href="/2023/04/18/svms-2">Support Vector Machines - Part 2: SVCs and SVMs</a></li>
+</ol>
+
+<p>Additional lectures in this series were taught by <a href="https://www.linkedin.com/in/petra-posedel-%C5%A1imovi%C4%87-96b5553/">Petra Posedel Šimović</a> from the University of Zagreb and <a href="https://www.linkedin.com/in/ramonprat/">Ramón Prat Casanovas</a> from the Autonomous University of Barcelona.</p>
+
+<p>These lectures are heavily based on <a href="https://hastie.su.domains/ElemStatLearn/">2006 - Hastie et al - Elements of Statistical Learning</a>, which I can highly recommend.</p>
+
+<h2 id="support-vector-classifiers">Support Vector Classifiers</h2>
+<p>We consider again the optimal hyperplane classifier,</p>
+
+\[G(x)=\operatorname{sign}\left[x^\top \beta+\beta_0\right],\]
+
+<p>but now for the case when the data is not linearly separable. This means that some points will lie on the wrong side of their respective margin, perhaps even on the wrong side of the hyperplane (and thus be misclassified).</p>
+
+<p>To account for this, we modify our optimization problem such that each point is allowed a <em>slack</em> of $\xi_i$, a relative distance the point is allowed to be inside the margin,</p>
+
+\[\begin{aligned}
+&amp;\min_{\beta,\,\beta_0} {\|\beta\|} \quad\mathrm{s.t.}\quad y_i(x_i^\top\beta + \beta_0)\geq 1 - \xi_i, \text{ for } i=1,\dots,N.
+&amp;
+\end{aligned}\]
+
+<p>It is clear that if $\xi_i&gt;1$, then the corresponding point, $x_i$ is misclassified. So we can bound the number of misclassified points by insisting that $\sum_{i=1}^N\xi_i\leq K$, where $K$ is a tuneable constant.</p>
+
+<p>The resulting optimization problem can be stated as</p>
+
+\[\min \|\beta\| \text { subject to }\left\{\begin{array}{l}
+y_i\left(x_i^T \beta+\beta_0\right) \geq 1-\xi_i \forall i \\
+\xi_i \geq 0, \sum \xi_i \leq K\text {,}
+\end{array}\right.\]
+
+<p>and the solution is known as a <em>support vector classifier</em>. The support vector classifier is the generalization of the optimal separating hyperplane classifier to the case of non-linearly separable data.</p>
+
+<h3 id="computing-the-support-vector-classifier">Computing the Support Vector Classifier</h3>
+<p>The above optimization problem has a convex objective function and linear inequality constraints, so, as before, we rely on the Karush-Kuhn-Tucker approach.</p>
+
+<p>We can re-write the optimization problem in a more standard form</p>
+
+\[\begin{aligned}
+&amp; \min _{\beta, \beta_0} \frac{1}{2}\|\beta\|^2+C \sum_{i=1}^N \xi_i \\
+&amp; \text { subject to } \quad \xi_i \geq 0,\\ 
+&amp;\text{ and } \quad y_i\left(x_i^\top \beta+\beta_0\right) - (1-\xi_i) \geq 0\ \forall i,
+\end{aligned}\]
+
+<p>where the “cost” parameter $C$ has replaced the constant $K$ and serves as the tuning parameter for the algorithm. This problem can be solved numerically using standard software. However, to highlight how support vector classifiers differ from separating hyperplane classifiers, we once again examine the corresponding Lagrangian.</p>
+
+<p>Let $\xi=(\xi_1,\dots,\xi_N)$ be a vector of the slack parameters and construct $l=(\beta, \beta_0, \xi^\top)^\top$. Then the Lagrangian becomes</p>
+
+\[\begin{aligned}
+\mathcal{L}(l, \alpha, \mu) =&amp; \frac{1}{2}{\|\beta\|^2} + C\sum_{i=1}^N\xi_i\\
+&amp;-\sum_{i=1}^N\alpha_i\left[y_i(x_i^\top\beta + \beta_0)-(1-\xi_i)\right] \\
+&amp;- \sum_{i=1}^N\mu_i\xi_i,
+\end{aligned}\]
+
+<p>where $\alpha$ and $\mu$ are the vectors of the Lagrange multipliers. The Karush-Kuhn-Tucker conditions characterize the unique solution to this minimization problem, and we focus on three of the necessary constraints,</p>
+
+\[\begin{aligned}
+&amp;\beta=\sum_{i=1}^N \alpha_i y_i x_i,\\
+&amp;\alpha_i \geq 0, \text{ and } \\
+&amp;\alpha_i\left[y_i\left(x_i^\top\beta+\beta_0\right)-\left(1-\xi_i\right)\right]=0.
+\end{aligned}\]
+
+<p>As before, the final constraint can be satisfied in one of two ways: either $\alpha_i=0$ and the corresponding data point plays no role in determining the solution $\beta$, or</p>
+
+\[y_i\left(x_i^\top\beta+\beta_0\right)=\left(1-\xi_i\right)\]
+
+<p>and the point lies either on or within its corresponding margin. Thus, only the points that lie on or within the margin (and are potentially misclassified) play a role in determing $\beta.$ These points are known as the <em>support vectors.</em></p>
+
+<h2 id="support-vector-machines">Support Vector Machines</h2>
+<p>Previously, we worked with training data of the form
+\(\mathcal{D} = \{(x_i, y_i) | x_i\in\mathbb{R}^p,\ y_i\in\{-1, 1 \}\}_{i=1}^N,\)
+and considered finding linear boundaries in the input feature space. First, for the case of linearly separable data, we considered optimal separating hyperplanes, and then for the non-linearly separable case, we considered support vector classifiers.</p>
+
+<p>We introduce <em>support vector machines</em> as a generalization of support vector classifiers that instead find a linear boundary in an <em>enlarged feature space</em> created by using basis expansions.</p>
+
+<p>Consider a set of $M&gt;p$ basis functions, $h_m(x)$, for $m = 1,\dots, M$, and the enlarged input feature space created by transforming each input using these basis functions, i.e., the new input features become
+\(h(x_i) = (h_1(x_i), \dots, h_M(x_i))\)
+for $i = 1,\dots,N$.</p>
+
+<p>A hyperplane in this basis, $\hat{f}(x) = h(x)^\top\hat{\beta} + \hat{\beta}_0,$ induces the classifier $\hat{G}(x) = \operatorname{sign}(\hat{f}(x))$. We can now proceed as we did for the classical support vector classifier, but the final result will be a non-linear classifier in the original space.</p>
+
+<p>This linear classifier in a higher-dimensional basis is known as a <em>support vector machine</em> (SVM) and, on the surface, it seems like it has made our classification problem more computationally expensive by increasing the dimension of our input features. In the next section, we show how this is not the case.</p>
+
+<h3 id="computing-the-support-vector-machine">Computing the Support Vector Machine</h3>
+<h4 id="the-inner-product-form">The Inner Product Form</h4>
+<p>Consider the previously derived Lagrangian of the support vector classifier, but now in the transformed feature space,</p>
+
+\[\begin{aligned}
+\hat{\mathcal{L}}(l, \alpha, \mu) =&amp; \frac{1}{2}{\|\hat\beta\|^2} + C\sum_{i=1}^N\xi_i\\
+&amp;-\sum_{i=1}^N\alpha_i\left[y_i\left(h(x_i)^\top\hat\beta + \hat\beta_0\right)-(1-\xi_i)\right] \\
+&amp;- \sum_{i=1}^N\mu_i\xi_i,
+\end{aligned}\]
+
+<p>where now $l=(\hat\beta,\hat\beta_0,\xi^\top)$. Setting the partial derivatives w.r.t. each of the components of $l$ equal to zero provides</p>
+
+\[\begin{aligned}
+\hat\beta &amp; =\sum_{i=1}^N \alpha_i y_i h(x_i), \\
+0 &amp; =\sum_{i=1}^N \alpha_i y_i, \\
+\alpha_i &amp; =C-\mu_i, \forall i,
+\end{aligned}\]
+
+<p>which, when substituted back into $\hat{\mathcal{L}}$, yields what’s known as the Lagrangian <em>dual</em> objective function</p>
+
+\[\hat{\mathcal{L}}_D=\sum_{i=1}^N \alpha_i-\frac{1}{2} \sum_{i=1}^N \sum_{i^{\prime}=1}^N \alpha_i \alpha_{i^{\prime}} y_i y_{i^{\prime}} h(x_i)^\top h(x_{i^{\prime}}).\]
+
+<p>Also, using the first partial derivative result above, we can rewrite the solution to our classification problem as</p>
+
+\[\hat{f}(x) = h(x)^\top\sum_{i=1}^N \alpha_i y_i h(x_i) + \hat{\beta}_0.\]
+
+<p>Both of these expressions (the Lagrangian dual objective function and the hyperplane solution) can be written in terms of the inner product,</p>
+
+\[\hat{\mathcal{L}}_D=\sum_{i=1}^N \alpha_i-\frac{1}{2} \sum_{i=1}^N \sum_{i^{\prime}=1}^N \alpha_i \alpha_{i^{\prime}} y_i y_{i^{\prime}}\left\langle h\left(x_i\right), h\left(x_{i^{\prime}}\right)\right\rangle .\]
+
+<p>and</p>
+
+\[\hat{f}(x)=\sum_{i=1}^N \alpha_i y_i\left\langle h(x), h\left(x_i\right)\right\rangle+\beta_0.\]
+
+<h4 id="the-kernel-form">The Kernel Form</h4>
+<p>Since the optimization problem and the solution involve $h(x)$ only through inner products, we in actual fact do not need to specify the transformation $h(x)$ at all, but only the kernel function</p>
+
+\[K\left(x, x^{\prime}\right)=\left\langle h(x), h\left(x^{\prime}\right)\right\rangle\]
+
+<p>that computes the inner product on the transformed space. Note that $K$ should a symmetric positive (semi-) definite function.</p>
+
+<p>Two popular choices for $K$ in the SVM literature are:</p>
+<ul>
+  <li>dth-Degree polynomial: $K\left(x, x^{\prime}\right)=\left(1+\left\langle x, x^{\prime}\right\rangle\right)^d$,</li>
+  <li>Radial basis: $K\left(x, x^{\prime}\right)=\exp \left(-\gamma\left|x-x^{\prime}\right|^2\right)$.</li>
+</ul>
+
+<p>Consider for example a feature space with two inputs $X_1$ and $X_2$, and a polynomial kernel of degree 2. Then</p>
+
+\[\begin{aligned}
+K\left(X, X^{\prime}\right) &amp; =\left(1+\left\langle X, X^{\prime}\right\rangle\right)^2 \\
+&amp; =\left(1+X_1 X_1^{\prime}+X_2 X_2^{\prime}\right)^2 \\
+&amp; =1+2 X_1 X_1^{\prime}+2 X_2 X_2^{\prime}+\left(X_1 X_1^{\prime}\right)^2+\left(X_2 X_2^{\prime}\right)^2+2 X_1 X_1^{\prime} X_2 X_2^{\prime} .
+\end{aligned}\]
+
+<p>Then $M=6$, and if we choose $h_1(X)=1, h_2(X)=\sqrt{2} X_1, h_3(X)=\sqrt{2} X_2, h_4(X)=X_1^2, h_5(X)=X_2^2$, and $h_6(X)=\sqrt{2} X_1 X_2$, then $K\left(X, X^{\prime}\right)=$ $\left\langle h(X), h\left(X^{\prime}\right)\right\rangle$.</p>
+
+      </div>
+  </div>
+  </body>
+</html>

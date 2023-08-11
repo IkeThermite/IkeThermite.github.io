@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>A Simple Introduction to Dynamic Programming</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name='description' content='Ralph Rudd is an academic at Reykjavik University.'>
+    <meta name='author' content='Ralph Rudd'>
+    
+    <link href='/css/blog.css' rel='stylesheet'/>
+    <link href='/css/trac.css' rel='stylesheet'/>
+    <link href='/css/markdown.css' rel='stylesheet'/>
+  </head>
+  <!-- for mathjax support -->
+  
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <body>
+    <div class='content'>
+      <div class='nav'>
+    <ul class='wrap'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/blog'>Blog</a></li>
+        <li><a href='/research'>Research</a></li>
+        <li><a href='/about'>About</a></li>
+    </ul>
+</div>
+      <div class='front-matter'>
+          <div class='wrap'>
+              <h1>A Simple Introduction to Dynamic Programming</h1>
+              <h4></h4>
+              <!-- <div class='bylines'>
+                  <div class='byline'>
+                      <h3>Published</h3>
+                      <p>09 February 2023</p>
+                  </div>
+              </div> -->
+              <div class='clear'></div>
+          </div>
+      </div>
+      <div class='wrap article'>
+          <h2 id="the-optimal-decision-making-problem">The Optimal Decision Making Problem</h2>
+<p>Consider a situation where you have to make a series of decisions to attempt to obtain the best outcome, like, e.g., playing a game that you want to win. This is known as an <em>optimal decision making problem</em> or an <em>optimal control problem</em>.</p>
+
+<p>The potential options you can choose between are called <em>actions</em> and the available actions are determined by the current environment or <em>state</em>. Once you’ve selected an action, you gain the payoff (also known as the <em>utility</em> or <em>objective</em>) associated with selecting that action in that state and then you move into the next state.</p>
+
+<p>Let’s formalize this problem. We consider a discrete-time grid with a finite time-horizon, such that $t\in{0, 1, \dots, N}$. The points on this grid represent the times when we need to select an action from the set of available actions. At time $t$, we indicate the current state with $x_t$ and the set of available actions as $D(x_t)$. If we select an action, $a_t\in D(x_t)$, we gain the payoff $F(x_t, a_t)$.</p>
+
+<p>We need one additional constraint, which is that the next state must only depend on the current state and the action selected. Thus, $x_{t+1} = T(x_t, a_t)$, for some function $T(x, a)$. Also note that at the final time, the end of the game, we can’t take any actions. So the payoff at the final time can only depend on the state we end up in, i.e., $F(x_N, a_N) = F(x_N)$.</p>
+
+<p>The diagram below illustrates the situation where the current state $x_t$ has only two available actions, $a_1$ and $a_2$.</p>
+
+<div class="figure">
+    <img src="/assets/Dynamic Programming.png" style="width: 50%; display: block; margin: 0 auto;" />
+    <div class="caption">
+        <span class="caption-label">Figure 1.</span> Diagram of the state space for the optimal decision making problem.
+    </div>
+</div>
+
+<p>Now the optimal decision making problem becomes
+\(V(x_t) = \max_{a_s\in D(x_s)} \sum_{s=t}^N\beta^{s-t} F(x_s, a_s).\)
+The goal is to maximize this <em>value function</em> $V$, by selecting the best possible action now and at all futures states, $a_s$ with $s=t, \dots, N$. The new addition is the <em>discount factor</em>, $\beta$ which is responsible for providing the <em>present value</em> (the value at time $t$) of the <em>future</em> payoffs.</p>
+
+<p>If we solve this problem, we obtain two things: 1) the value of $V(x_t)$, which is the best possible present value we can get for our future actions, and 2) the series of actions themselves, the $a_s$ values for $s=t,t+1,\ldots,N,$ which tells us which actions to take to obtain this best possible payoff. The corresponding function, $a(x)$, which tells us which action to take in any state $x$, is known as the <em>policy function</em>.</p>
+
+<h2 id="bellmans-principle-of-optimality">Bellman’s Principle of Optimality</h2>
+<p>To solve this problem, we’ll break it up into smaller subproblems. Let’s separate out the first decision, i.e., the first term in the summation:</p>
+
+\[V(x_t) = \max_{a_t\in D(x_t)} \left\{F(x_t, a_t) +  \beta \left[ \max_{a_s\in D(x_s)} \sum_{s=t+1}^N\beta^{s-(t+1)} F(x_s, a_s) \right]\right\}\]
+
+<p>It should be clear that the second term in this expression, the term in the square brackets, is simply $V(x_{t+1})$, the value function at the next step. Thus,</p>
+
+\[V(x_t) =  \max_{a_t\in D(x_t)} \left\{F(x_t, a_t) +  \beta V(x_{t + 1})\right\}.\]
+
+<p>We can simplify the expression by dropping the time subscripts and explicitly showing how the next state is attained,</p>
+
+\[V(x) =  \max_{a\in D(x)} \left\{F(x, a) +  \beta V(T(x,a))\right\}.\]
+
+<p>This is the famous Bellman equation and it provides a recursive definition for the value function. Bellman referred to this recursive property as the <em>principle of optimality</em>:</p>
+
+<ul>
+  <li><strong>Principle of Optimality:</strong> <em>An optimal policy has the property that whatever the initial state and initial decision are, the remaining decisions must constitute an optimal policy with regard to the state resulting from the first decision.</em></li>
+</ul>
+
+<h2 id="finding-the-optimal-policy-with-dynamic-programming">Finding the Optimal Policy with Dynamic Programming</h2>
+<p><em>Dynamic programming</em> is a recursive method to solve these sequential decision problems by using <em>backwards induction</em>: we solve the problem for the last period in the sequence and then use that solution to solve the problem for the second last period and so forth, until we arrive the first period.</p>
+
+<p>The Bellman equation is what allows us to do this: It says that if we have the optimal value function (for all possible states) at time $t+1$ then we can find the optimal value function at time $t$ by simply maximizing over all the actions available at time $t$.</p>
+
+<p>This is a big leap! In the initial problem formulation we had to maximize over all possible actions over all future states. But now we have broken that large problem up into a sequence of smaller problems. Instead of performing one large maximization over the entire time period, we perform a series of smaller maximizations, one for each time step.</p>
+
+      </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Dynamic Programming for American Option Pricing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name='description' content='Ralph Rudd is an academic at Reykjavik University.'>
+    <meta name='author' content='Ralph Rudd'>
+    
+    <link href='/css/blog.css' rel='stylesheet'/>
+    <link href='/css/trac.css' rel='stylesheet'/>
+    <link href='/css/markdown.css' rel='stylesheet'/>
+  </head>
+  <!-- for mathjax support -->
+  
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <body>
+    <div class='content'>
+      <div class='nav'>
+    <ul class='wrap'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/blog'>Blog</a></li>
+        <li><a href='/research'>Research</a></li>
+        <li><a href='/about'>About</a></li>
+    </ul>
+</div>
+      <div class='front-matter'>
+          <div class='wrap'>
+              <h1>Dynamic Programming for American Option Pricing</h1>
+              <h4></h4>
+              <!-- <div class='bylines'>
+                  <div class='byline'>
+                      <h3>Published</h3>
+                      <p>10 February 2023</p>
+                  </div>
+              </div> -->
+              <div class='clear'></div>
+          </div>
+      </div>
+      <div class='wrap article'>
+          <p>Please note that this post relies on <a href="/2023/02/09/dynamic-programming">The Simple Introduction to Dynamic Programming</a>.</p>
+
+<h2 id="the-optimal-exercise-problem">The Optimal Exercise Problem</h2>
+<p>Consider the continuous-time American option pricing problem,</p>
+
+\[V_t = \sup_{t^*\in\mathcal{T}}E_t^Q\bigl[\beta^{t^*-t} H(S_{t^*})\bigr].\]
+
+<p>Here, $V_t$ is the current price of an American option, written on an underlying $S_t$ with payoff $H(S_t)$.</p>
+
+<p>The $\beta^{ t^* -t }$ is the prevailing discount factor from the future exercise time, $t^*$, to the current time, $t$, and $\mathcal{T}$ is the set of all admissable stopping times on $[t,T]$, with $T$ the maturity of the option.</p>
+
+<p>The difference between this equation and the standard risk-neutral pricing equation for European options is the presence of the supremum. It indicates that the price of the American option is determined by $t ^ { * }$, the exercise time that maximizes the present value of the option, known as the <em>optimal exercise time</em>.</p>
+
+<p>Thus, this pricing equation can be considered as an <em>optimal decision making problem:</em> “Given that at each moment we can decide to either exercise or not exercise the option, what is the optimal decision policy?”</p>
+
+<p>Since exercising the option terminates the sequence, this is the same as finding the optimal exercise time.</p>
+
+<h2 id="stochastic-optimal-control">Stochastic Optimal Control</h2>
+<p>We again consider a discrete-time grid, with a finite time-horizon corresponding to the maturity of the option, such that $t\in{0, 1, \dots, N}$. The points on this grid represent the times when we need choose whether to exercise the option or not.</p>
+
+<p>It is important to note that because we are only considering a finite number of exercise times, we are actually valuing a <em>Bermudan</em> option. As we increase the resolution of our grid, the price will approach that of an American option.</p>
+
+<p>We let our state space be the states of the underlying, such that $x_t := S_t$. In our introduction to <a href="./2023-02-09-dynamic-programming.md">dynamic programming</a>, we had the constraint that the next state must be a deterministic function of the current state and the action taken in the current state, i.e., $x_{t+1} = T(x_t, a_t)$. This no longer true: $S_t$ is a stochastic process. As such, $x_{t+1}=T(x_t, a_t, X_{t+1})$ where $X_{t+1}$ is a random variable at $t$. In the classical Black-Scholes-Merton environment, $X_{t+1}$ would be lognormally distributed.</p>
+
+<p>The optimal decision making problem becomes</p>
+
+\[V(x_t) = \max_{a_s\in D(x_s)}E^Q_t\biggl[\sum_{s=t}^N\beta^{s-t}F(x_s, a_s)\biggr].\]
+
+<p>The conditional expectation is required because of the randomness in the state space: we can now only hope to find the policy that is optimal <em>in expectation</em>. This is a <em>stochastic control problem.</em></p>
+
+<h2 id="american-option-pricing">American Option Pricing</h2>
+<p>Following similar heuristics as in the deterministic case, we can arrive at the Bellman equation for stochastic control,</p>
+
+\[V(x_t) = \max_{a_t\in D(x_t)}\left\{F(x_t, a_t) + E^Q_t\bigl[\beta V(x_{t+1})\bigr] \right\}.\]
+
+<p>In the case of American option pricing, the set $D(x_t)$ only has two elements. We can either exercise the option, which we denote $a_1$, or not, which we denote $a_2$.</p>
+
+<p>If we exercise the option, we receive the payoff of the option immediately, that is $F(x_t, a_1) = H(x_t)$. However the future expectation becomes zero: after exercise, the option is worthless.</p>
+
+<p>If we decide not to exercise the option, we receive no payoff right now, i.e., $F(x_t, a_2) = 0$. However, the future expectation will be non-zero.</p>
+
+<p>Thus, the above equation becomes</p>
+
+\[V(x_t) = \max\bigl({H(x_t)}, E^Q_t\bigl[\beta V(x_{t+1})\bigr]\bigr).\]
+
+<p>This is the <em>dynamic programming equation for American options</em>. It says that the value of an American option at the current time, is the maximum of its <em>intrinsic value</em> (the value of immediate exercise) and its <em>continuation value</em> (the value of holding the option beyond the current time, <em>conditional</em> on the current state).</p>
+
+      </div>
+  </div>
+  </body>
+</html>
