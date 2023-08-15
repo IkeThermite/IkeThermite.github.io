@@ -65,14 +65,40 @@
   <li>When writing a new post, just mimic the headers of the previous posts.</li>
 </ul>
 
-<h4 id="to-build-locally">To Build Locally</h4>
+<h4 id="to-test-locally">To Test Locally</h4>
 
 <ul>
   <li>Open the site root folder in Git Bash.</li>
   <li><code class="language-plaintext highlighter-rouge">exec jekyll serve</code>
     <ul>
       <li>This builds the site and hosts it locally to <code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/</code>.</li>
-      <li>Saving any edits will rebuilt the site, but you still need to refresh the browser to see the changes.</li>
+      <li>Saving any edits will rebuild the site, but you still need to refresh the browser to see the changes.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="to-push-the-changes-to-the-web">To Push the Changes to the Web</h4>
+
+<ul>
+  <li>Open the site root folder in Git Bash</li>
+  <li>The site root folder is already a Git repository with the correct name to work with Github Pages.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">git add --all</code>
+        <ul>
+          <li>Stage all the changes.</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">git commit -a -m "Commit message</code>
+        <ul>
+          <li>Commit all the changes.</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">git push origin master</code>
+        <ul>
+          <li>Push the changes to the remote repository on Github.</li>
+          <li>This should build the site automagically!</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>

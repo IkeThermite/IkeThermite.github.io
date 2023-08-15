@@ -21,7 +21,7 @@ This is a [static site](https://en.wikipedia.org/wiki/Static_web_page) built usi
 - Open the site root folder in Git Bash.
 - ``exec jekyll serve``
   - This builds the site and hosts it locally to ``http://127.0.0.1:4000/``.
-  - Saving any edits will rebuilt the site, but you still need to refresh the browser to see the changes.
+  - Saving any edits will rebuild the site, but you still need to refresh the browser to see the changes.
 
 #### To Push the Changes to the Web
 
