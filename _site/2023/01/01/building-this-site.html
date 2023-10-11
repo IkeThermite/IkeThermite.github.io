@@ -63,6 +63,35 @@
   <li>All the posts are markdown files kept in the <code class="language-plaintext highlighter-rouge">_posts</code>.</li>
   <li>I’m using the <a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a> extension for editing markdown files in VS Code.</li>
   <li>When writing a new post, just mimic the headers of the previous posts.</li>
+  <li>To include a picture:
+    <ul>
+      <li>Copy the picture into the <code class="language-plaintext highlighter-rouge">assets</code> folder.</li>
+      <li>Include the HTML code below into the post.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'figure'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/assets/example.jpg"</span>
+         <span class="na">style=</span><span class="s">"width: 100%; display: block; margin: 0 auto;"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'caption'</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">'caption-label'</span><span class="nt">&gt;</span>Figure 1.<span class="nt">&lt;/span&gt;</span> I find this meme oddly comforting.
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<div class="figure">
+    <img src="/assets/example.jpg" style="width: 100%; display: block; margin: 0 auto;" />
+    <div class="caption">
+        <span class="caption-label">Figure 1.</span> I find this meme oddly comforting.
+    </div>
+</div>
+
+<ul>
+  <li>When encountering trouble with the rendering of mathematics, refer to <a href="https://stackoverflow.com/questions/49970549/trouble-rendering-some-latex-syntax-in-mathjax-with-jekyll-on-github-pages">this</a> answer.
+    <ul>
+      <li>Most likely, I need to escape any underscores inside my inline mathematics.</li>
+    </ul>
+  </li>
 </ul>
 
 <h4 id="to-test-locally">To Test Locally</h4>
