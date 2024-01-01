@@ -50,7 +50,7 @@ Consider that we have $N$ uncorrelated samples of $X_T$, denoted $X_T^{(i)}$ for
 The typical estimator for the sample mean is given by
 
 $$
-\hat{\bar{X}}\_T = \frac{1}{N}\sum_{i=1}^N X_T^{(i)}.
+\hat{\bar{X}}_T = \frac{1}{N}\sum_{i=1}^N X_T^{(i)}.
 $$
 
 We want to investigate the properties of this *estimator*, for example, how much data would we need to have a "good" estimate?
@@ -64,7 +64,7 @@ Next, we consider the variance of the estimator
 
 $$\operatorname{Var}\left(\hat{\bar{X}}_T\right) = \operatorname{Var}\left(\frac{1}{N}\sum_{i=1}^N X_T^{(i)}\right) = \frac{1}{N^2}  \operatorname{Var}\left(\sum_{i=1}^N X_T^{(i)}\right) = \frac{N}{N^2} \sigma_T^2 = \frac{\sigma_T^2}{N}.$$
 
-On the surface, this result is not surprising: as we increase the number of samples in our data set, the variance of our mean estimator increases, going to zero as our number of samples goes to infinity. Unfortunately, this is not great given the typical values for financial data.
+On the surface, this result is not surprising: as we increase the number of samples in our data set, the variance of our mean estimator decreases, going to zero as our number of samples goes to infinity. Unfortunately, this is not great given the typical values for financial data.
 
 Consider the case where $\bar{X}_1 = 10\%$ and $\sigma_1 = 20\%$, i.e., the expected annual return is 10% and the annual volatility is 20%. The table below shows the standard deviation of the *estimator* as a percentage of the *true value we are trying to estimate*.
 

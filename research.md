@@ -16,7 +16,7 @@ title: Research
 - Kienitz, J., McWalter, T. A., Rudd, R., & Platen, E. (2022). [Quantization Methods for Stochastic Differential Equations](https://www.springerprofessional.de/en/novel-mathematics-inspired-by-industrial-challenges/20268810). In Novel Mathematics Inspired by Industrial Challenges (pp. 299-329). Cham: Springer International Publishing.
 
 ## Conference Papers
-- Bachand, A., Doyon, B., Schulz, R., Rudd, R., & Raymond, J. (2023). Numerical Model for Underground Hydrogen Storage in Cased Boreholes. In IRES 2023: International Renewable Energy Storage and Systems Conference.
+- Bachand, A., Doyon, B., Schulz, R., Rudd, R., & Raymond, J. (2023). [Numerical Model for Underground Hydrogen Storage in Cased Boreholes](https://www.atlantis-press.com/proceedings/ires-22/125987274). In IRES 2023: International Renewable Energy Storage and Systems Conference.
 - Audunsson, H., Rouvrais, S., Rudd, R., Kristjánsson, R., & Moschetta, O. M. (2022, June). [Does a master's program in engineering require a final project?](https://imt-atlantique.hal.science/hal-03683564/document). In CDIO 2022: 18th CDIO International Conference.
 
 ## Qualifying Research
