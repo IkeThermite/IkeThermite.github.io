@@ -17,6 +17,7 @@ I have the priviledge of working with some amazing researchers around the world:
 
 
 ### News Articles
+- [20240811 - University of Cape Town](https://commerce.uct.ac.za/aifmrm/articles/2023-08-11-financial-mathematics-team-challenge-2023)
 - [20230522 - Reykjavik University](https://www.ru.is/haskolinn/frettir/lektor-hr-kenndi-namskeid-vid-haskolann-i-kaenugardi-afar-thakklatur-fyrir-taekifaerid)
 - [20220622 - AIFMRM Profile](http://www.aifmrm.uct.ac.za/newsroom/the-world-needs-financial-risk-specialists-now-more-than-ever/)
 - [20170801 - BizCommunity](https://www.bizcommunity.com/Article/196/499/165526.html#)
